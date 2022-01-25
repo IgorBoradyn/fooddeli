@@ -211,9 +211,8 @@
     				<label class="input-group-text" for="inputGroupSelect01" style="color: #fd7e14">Sortuj według</label>
   				</div>
   				<select class="custom-select" id="inputGroupSelect01">
-   					<option selected>Najpopularniejsze</option>
-    				<option value="1">Opinie</option>
-    				<option value="2">Liczba opini</option>
+   					<option selected>Najlepsze dopasowanie</option>
+    				<option value="1">Cena</option>
   				</select>
   			</div>
     	</div>
