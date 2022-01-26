@@ -25,7 +25,21 @@
   				<div class="form-row">
 					<div class="col-10 pb-1 pt-1">
       					<label for="validationCustom07">E-mail</label>
-      					<input type="text" class="form-control" id="validationCustom07" placeholder="E-mail z bazy danych" disabled>
+      					<input type="text" class="form-control" id="validationCustom01" placeholder="z bazy danych" disabled>
+      					<label for="validationCustom07">Imię i nazwisko</label>
+      					<input type="text" class="form-control" id="validationCustom02" placeholder="z bazy danych" disabled>
+      					<label for="validationCustom07">Ulica</label>
+      					<input type="text" class="form-control" id="validationCustom03" placeholder="z bazy danych" disabled>
+      					<label for="validationCustom07">Numer budynku</label>
+      					<input type="text" class="form-control" id="validationCustom04" placeholder="z bazy danych" disabled>
+      					<label for="validationCustom07">Numer mieszkania</label>
+      					<input type="text" class="form-control" id="validationCustom05" placeholder="z bazy danych" disabled>
+      					<label for="validationCustom07">Numer telefonu</label>
+      					<input type="text" class="form-control" id="validationCustom06" placeholder="z bazy danych" disabled>
+      					<label for="validationCustom07">Kod pocztowy</label>
+      					<input type="text" class="form-control" id="validationCustom07" placeholder="z bazy danych" disabled>
+      					<label for="validationCustom07">Miasto</label>
+      					<input type="text" class="form-control" id="validationCustom08" placeholder="z bazy danych" disabled>
     				</div>
     			</div>
 			</form>
@@ -40,7 +54,7 @@
 	</div>
 </div>
 
-<footer class="page-footer fixed-bottom font-small bg-light"><div class=​"row" style=​"width:​ 85%;​ margin-left:​ auto;​ margin-right:​ auto;​">​
+<footer class="page-footer font-small bg-light"><div class=​"row" style=​"width:​ 85%;​ margin-left:​ auto;​ margin-right:​ auto;​">​
 	<div class="footer-copyright text-center py-3">© 2022 Copyright:
     	<a href="https://moodle.uwm.edu.pl/enrol/index.php?id=5426/" style="color:black"> FoodDeli.pl</a>
   	</div>

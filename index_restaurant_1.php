@@ -19,7 +19,13 @@
 <h2 class='fluid bg-light text-center mb-0 pt-4 pb-3'>Zamówienia aktywne</h2>
 
 <div class="text-center">
-	<button type="button" class="btn border bordercolor resto shadow-none" data-toggle="modal" data-target="#exampleModalCenter1" style="min-width: 210px;">Zamówienie #1111111</button>
+  	<div class="row justify-content-center">
+    	<div class="col-6">
+      		<div class="list-group">
+  				<a href="#" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#exampleModalCenter1" style="outline: none !important;">#1111111</a>
+			</div>
+    	</div>
+  	</div>
 	<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   		<div class="modal-dialog modal-dialog-centered" role="document">
     		<div class="modal-content">
@@ -38,7 +44,7 @@
 										<div class="row" style="min-height: 100%;">
 			  								<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Kubełek 30 Hot Wings</div>
 			  								<div class="w-100"></div>
-			  								<div class="col h-50 lead" style="padding-left: 10%; font-size: 16px;">30 Hot Wings (pikantne skrzydełka), 2x frytki 40g</div>
+			  								<div class="col h-50 lead pb-2" style="padding-left: 10%; font-size: 16px;">30 Hot Wings (pikantne skrzydełka), 2x frytki 40g</div>
 										</div>
 									</div>
 								</div>
@@ -63,7 +69,7 @@
 										<div class="row" style="min-height: 100%;">
 			  								<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Adam</div>
 			  								<div class="w-100"></div>
-			  								<div class="col h-50 lead" style="font-size: 22px;">Kod obdioru: 567</div>
+			  								<div class="col h-50 lead pb-2" style="font-size: 22px;">Kod obdioru: 567</div>
 										</div>
 									</div>
 								</div>
@@ -88,7 +94,13 @@
 <h2 class='fluid bg-light text-center mb-0 pt-4 pb-3'>Zamówienia oczekujące na kuriera</h2>
 
 <div class="text-center">
-	<button type="button" class="btn border bordercolor resto shadow-none" data-toggle="modal" data-target="#exampleModalCenter2" style="min-width: 210px;">Zamówienie #2222222</button>
+	  	<div class="row justify-content-center">
+    	<div class="col-6">
+      		<div class="list-group">
+  				<a href="#" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#exampleModalCenter2" style="outline: none !important;">#2222222</a>
+			</div>
+    	</div>
+  	</div>
 	<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   		<div class="modal-dialog modal-dialog-centered" role="document">
     		<div class="modal-content">
@@ -120,7 +132,14 @@
 <h2 class='fluid bg-light text-center mb-0 pt-4 pb-3'>Zamówienia w kolecje</h2>
 
 <div class="text-center pb-5">
-	<button type="button" class="btn border bordercolor resto shadow-none" data-toggle="modal" data-target="#exampleModalCenter3" style="min-width: 210px;">Zamówienie #3333333</button>
+	  	<div class="row justify-content-center">
+    	<div class="col-6">
+      		<div class="list-group">
+  				<a href="#" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#exampleModalCenter3" style="outline: none !important;">#3333333</a>
+  				<a href="#" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#exampleModalCenter4" style="outline: none !important;">#4444444</a>
+			</div>
+    	</div>
+  	</div>
 	<div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   		<div class="modal-dialog modal-dialog-centered" role="document">
     		<div class="modal-content">
@@ -139,7 +158,7 @@
 										<div class="row" style="min-height: 100%;">
 			  								<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Kubełek 30 Hot Wings</div>
 			  								<div class="w-100"></div>
-			  								<div class="col h-50 lead" style="padding-left: 10%; font-size: 16px;">30 Hot Wings (pikantne skrzydełka), 2x frytki 40g</div>
+			  								<div class="col h-50 lead pb-2" style="padding-left: 10%; font-size: 16px;">30 Hot Wings (pikantne skrzydełka), 2x frytki 40g</div>
 										</div>
 									</div>
 								</div>
@@ -158,10 +177,10 @@
 					<div class="container">
   						<div class="row">
     						<div class="col pt-4 pb-4">
-								<button type="button" class="btn btn-success px-5 py-2" onclick="location.href='index_delivery_1.php'">Zaakceptuj</button>
+								<button type="button" class="btn btn-success px-5 py-2" onclick="">Zaakceptuj</button>
 							</div>
     						<div class="col pt-4 pb-4">
-								<button type="button" class="btn btn-danger px-5 py-2" data-dismiss="modal">Odrzuć</button>
+								<button type="button" class="btn btn-danger px-5 py-2" onclick="">Odrzuć</button>
     						</div>
   						</div>
 					</div>
@@ -172,7 +191,6 @@
 </div>
 
 <div class="text-center pb-5">
-	<button type="button" class="btn border bordercolor resto shadow-none" data-toggle="modal" data-target="#exampleModalCenter4" style="min-width: 210px;">Zamówienie #4444444</button>
 	<div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   		<div class="modal-dialog modal-dialog-centered" role="document">
     		<div class="modal-content">
@@ -191,18 +209,18 @@
 										<div class="row" style="min-height: 100%;">
 			  								<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Kubełek 30 Hot Wings</div>
 			  								<div class="w-100"></div>
-			  								<div class="col h-50 lead" style="padding-left: 10%; font-size: 16px;">30 Hot Wings (pikantne skrzydełka), 2x frytki 40g</div>
+			  								<div class="col h-50 lead pb-2" style="padding-left: 10%; font-size: 16px;">30 Hot Wings (pikantne skrzydełka), 2x frytki 40g</div>
 										</div>
 									</div>
 								</div>
   							</div>
   							<div class="col-1" style="display: flex; justify-content: center; align-items: center;">
-								<input type="text" class="form-control no-padding add-color text-center height-25 border bordercolor rounded-0" maxlength="2" value="0" style="width: 35px; color: black;"disabled>
+								<input type="text" class="form-control no-padding add-color text-center height-25 border bordercolor rounded-0" maxlength="2" value="8" style="width: 35px; color: black;"disabled>
   							</div>
   							<div class="w-100"></div>
   							<div class="col h-50" style="font-size: 22px;">Płatność: <h2 class="col ml-2" style="color: #fd7e14">Gotówka</h2></div>
   							<div class="w-100"></div>
-  							<div class="col h-50" style="font-size: 22px;">Do zapłaty: <h2 class="col ml-2" style="color: #fd7e14">156 zł</h2></div>
+  							<div class="col h-50" style="font-size: 22px;">Do zapłaty: <h2 class="col ml-2" style="color: #fd7e14">312 zł</h2></div>
   						</div>
 					</div>
       			</div>
@@ -210,10 +228,10 @@
 					<div class="container">
   						<div class="row">
     						<div class="col pt-4 pb-4">
-								<button type="button" class="btn btn-success px-5 py-2" onclick="location.href='index_delivery_1.php'">Zaakceptuj</button>
+								<button type="button" class="btn btn-success px-5 py-2" onclick="">Zaakceptuj</button>
 							</div>
     						<div class="col pt-4 pb-4">
-								<button type="button" class="btn btn-danger px-5 py-2" data-dismiss="modal">Odrzuć</button>
+								<button type="button" class="btn btn-danger px-5 py-2" onclick="">Odrzuć</button>
     						</div>
   						</div>
 					</div>

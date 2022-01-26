@@ -50,6 +50,48 @@
 			<div class="invalid-feedback">Niepoprawne hasło. Twoje hasło powinno składać się z przynajmniej 8 znaków, zawierać zarówno małą i wielką literę oraz cyfrę.</div>
 		</div>
 		<div class="w-100" style="padding-top: 30px"></div>
+		<div class="col placeholder">
+      		<label for="validationCustom04">Imię i nazwisko</label>
+      		<input type="text" class="form-control" id="validationCustom04" placeholder="Wpisz swoje imię i nazwisko" required>
+      		<div class="invalid-feedback">Należy podać imię i nazwisko</div>
+		</div>
+		<div class="w-100" style="padding-top: 30px"></div>
+		<div class="col placeholder">
+      		<label for="validationCustom05">Ulica</label>
+      		<input type="text" class="form-control" id="validationCustom05" placeholder="Wpisz nazwę ulicy" required>
+      		<div class="invalid-feedback">Nazwa ulicy jest wymagana</div>
+		</div>
+		<div class="w-100" style="padding-top: 30px"></div>
+		<div class="col placeholder">
+			<label for="validationCustom06">Numer budynku</label>
+			<input type="text" class="form-control" id="validationCustom06" placeholder="Wpisz numer budynku" required>
+			<div class="invalid-feedback">Numer domu jest wymagany</div>
+		</div>
+		<div class="w-100" style="padding-top: 30px"></div>
+		<div class="col placeholder">
+			<label for="validationCustom07">Numer mieszkania</label>
+			<input type="text" class="form-control" id="validationCustom07" placeholder="Wpisz numer mieszkania" required>
+			<div class="invalid-feedback">Numer mieszkania jest wymagany</div>
+		</div>
+		<div class="w-100" style="padding-top: 30px"></div>
+		<div class="col placeholder">
+			<label for="validationCustom08">Numer telefonu</label>
+			<input type="tel" class="form-control" id="validationCustom08" placeholder="Wpisz swój numer telefonu" pattern="[0-9]{9}" required>
+			<div class="invalid-feedback">Należy podać numer telefonu</div>
+		</div>
+		<div class="w-100" style="padding-top: 30px"></div>
+		<div class="col placeholder">
+      		<label for="validationCustom09">Kod pocztowy</label>
+			<input type="text" class="form-control" id="validationCustom09" placeholder="Wpisz swój kod pocztowy" pattern="[0-9]{2}[-][0-9]{3}" required>
+      		<div class="invalid-feedback">Należy podać kod pocztowy</div>
+		</div>
+		<div class="w-100" style="padding-top: 30px"></div>
+		<div class="col placeholder">
+			<label for="validationCustom10">Miasto</label>
+			<input type="text" class="form-control" id="validationCustom10" placeholder="Wpisz swoje miasto" required>
+			<div class="invalid-feedback">Należy podać miasto</div>
+		</div>
+		<div class="w-100" style="padding-top: 30px"></div>
 		<div class="col">
      		<p class="text-right">Klikając przycisk „Uwtórz konto”, akceptujesz <a style="color: #fd7e14" href="index_statute.php">regulamin serwisu oraz politykę prywatności</a>.</p>
     	</div>
