@@ -23,7 +23,7 @@
     	<div class="col-6"></div>
     	<div class="col-3 text-center">
      		<div class="bg-light text-center" style="height: 0px;">
-				<button class="btn border bordercolor resto shadow-none" id='back' type="button" onclick="location.href='index_register_restaurant.php'" style="margin-top: -95px; background: rgb(234, 236, 239);">Dołącz restaurację</button>
+				<button class="btn border bordercolor resto shadow-none" id='back' type="button" onclick="location.href='register_restaurant.php'" style="margin-top: -95px; background: rgb(234, 236, 239);">Dołącz restaurację</button>
 			</div>
     	</div>
   	</div>
@@ -93,7 +93,7 @@
 		</div>
 		<div class="w-100" style="padding-top: 30px"></div>
 		<div class="col">
-     		<p class="text-right">Klikając przycisk „Uwtórz konto”, akceptujesz <a style="color: #fd7e14" href="index_statute.php">regulamin serwisu oraz politykę prywatności</a>.</p>
+     		<p class="text-right">Klikając przycisk „Uwtórz konto”, akceptujesz <a style="color: #fd7e14" href="statute.php">regulamin serwisu oraz politykę prywatności</a>.</p>
     	</div>
         <div class="w-100" style="padding-top: 30px"></div>
 		<div class="col">    	
@@ -101,13 +101,13 @@
  				<button class="btn border bordercolor resto shadow-none btn-lg" id='back' type="submit" style="background: rgb(234, 236, 239);">Utwórz konto</button>
     		</div>
 			<div class="text-center">
-    			<p>Masz już konto? <a href='index_login.php' style="color: #fd7e14">Zaloguj się</a></p>
+    			<p>Masz już konto? <a href='login.php' style="color: #fd7e14">Zaloguj się</a></p>
  			</div>
 		</div>
 	</div>
 </form>
 
-<footer class="page-footer font-small bg-light"><div class=​"row" style=​"width:​ 85%;​ margin-left:​ auto;​ margin-right:​ auto;​">​
+<footer class="page-footer font-small bg-light"><div class="row" style="width: 85%; margin-left: auto; margin-right: auto;">
 	<div class="footer-copyright text-center py-3">© 2022 Copyright:
     	<a href="https://moodle.uwm.edu.pl/enrol/index.php?id=5426/" style="color:black"> FoodDeli.pl</a>
   	</div>

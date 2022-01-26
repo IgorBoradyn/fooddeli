@@ -2,20 +2,20 @@
 <html lang='pl'>
 <head>
 	<meta charset="utf-8">
-	<title>FoodDeli - Zostańmy partnerami</title>
+	<title>FoodDeli - Regulamin</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   	<link rel="stylesheet" href="main.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  	<script src="https://kit.fontawesome.com/6c40eaf681.js" crossorigin="anonymous"></script>
+  	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="bg-light">
 
 <header></header>
 
-<h2 class='fluid bg-light text-center mb-0 pt-4 pb-3'>Zostańmy partnerami</h2>
+<h2 class='fluid bg-light text-center mb-0 pt-4 pb-3'>Regulamin serwisu oraz polityka prywatności</h2>
 
 <div class="container-fluid bg-light">
 	<div class="row" style="width: 85%; margin-left: auto; margin-right: auto;">
@@ -28,56 +28,34 @@
 				Sed finibus libero at feugiat ultrices. Nullam sagittis porta sem. Sed volutpat nisl turpis, nec consequat diam dignissim ac. Praesent condimentum purus eu bibendum cursus. Ut iaculis tempor neque a ultrices. Donec mollis sapien in mauris lacinia, in suscipit ante gravida. Sed sed condimentum diam.
 			</div>
   		</div>
-  		<div class="w-100" style="padding-top: 30px"></div>
-  		<div class="col">
-			<form class="needs-validation" novalidate>
-				<div class="form-row" style="width: 40%; margin-left: auto; margin-right: auto;">
-			    	<div class="col placeholder">
-			      		<label for="validationCustom01">Adres mailowy</label>
-			      		<input type="email" class="form-control" id="validationCustom01" placeholder="adresmailowy@mail.com" required>
-			      		<div class="invalid-feedback">Należy podać adres e-mail</div>
-			    	</div>
-			    	<div class="w-100" style="padding-top: 30px"></div>
-			    	<div class="col">    	
-			    		<div class="col text-center pt-4 pb-5">
-				      		<div class="bg-light text-center" style="height: 0px;">
-								<button class="btn border bordercolor resto shadow-none btn-lg" id='back' type="submit" style="background: rgb(234, 236, 239);">Dołącz do nas</button>
-				    		</div>
-			  			</div>
-			  		</div>
-			</form>
-  		</div>
-  		<div class="container"></div>
 	</div>
 </div>
 
-<footer class="page-footer font-small bg-light"><div class=​"row" style=​"width:​ 85%;​ margin-left:​ auto;​ margin-right:​ auto;​">​
+<footer class="page-footer fixed-bottom font-small bg-light"><div class="row" style="width: 85%; margin-left: auto; margin-right: auto;">
 	<div class="footer-copyright text-center py-3">© 2022 Copyright:
     	<a href="https://moodle.uwm.edu.pl/enrol/index.php?id=5426/" style="color:black"> FoodDeli.pl</a>
   	</div>
 </footer>
 
-<script>
-	$("header").load("navbar.php");
-</script>
-
 </body>
 </html>
 
 <script>
-(function() {
-	'use strict';
-  	window.addEventListener('load', function() {
-    	var forms = document.getElementsByClassName('needs-validation');
-    	var validation = Array.prototype.filter.call(forms, function(form) {
-      		form.addEventListener('submit', function(event) {
-        		if (form.checkValidity() === false) {
-          			event.preventDefault();
-          			event.stopPropagation();
-        		}
-        		form.classList.add('was-validated');
-     		}, false);
-    	});
-  	}, false);
-})();
+	$("header").load("navbar.php");
+
+	(function() {
+		'use strict';
+		window.addEventListener('load', function() {
+			var forms = document.getElementsByClassName('needs-validation');
+			var validation = Array.prototype.filter.call(forms, function(form) {
+				form.addEventListener('submit', function(event) {
+					if (form.checkValidity() === false) {
+						event.preventDefault();
+						event.stopPropagation();
+					}
+					form.classList.add('was-validated');
+				}, false);
+			});
+		}, false);
+	})();
 </script>

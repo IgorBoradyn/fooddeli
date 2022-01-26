@@ -23,14 +23,14 @@
 	  	<div class="w-100"></div>
 	  	<div class="col text-center">
 	  		<div class="btn-group" role="group" aria-label="Basic example">
-				<button type="button" class="btn btn-success border bordercolor shadow-none mr-3 rounded" onclick="location.href='index_delivery_3.php'" style="width: 125px">Zaakceptuj</button>
-				<button type="button" class="btn btn-danger border bordercolor shadow-none ml-3 rounded" onclick="location.href='index_delivery_1.php'" style="width: 125px">Odrzuć</button>
+				<button type="button" class="btn btn-success border bordercolor shadow-none mr-3 rounded" onclick="location.href='delivery_accepted.php'" style="width: 125px">Zaakceptuj</button>
+				<button type="button" class="btn btn-danger border bordercolor shadow-none ml-3 rounded" onclick="location.href='delivery_wait.php'" style="width: 125px">Odrzuć</button>
 			</div>
 	  	</div>
 	</div>
 </div>
 
-<footer class="page-footer fixed-bottom font-small bg-light"><div class=​"row" style=​"width:​ 85%;​ margin-left:​ auto;​ margin-right:​ auto;​">​
+<footer class="page-footer fixed-bottom font-small bg-light"><div class="row" style="width: 85%; margin-left: auto; margin-right: auto;">
 	<div class="footer-copyright text-center py-3">© 2022 Copyright:
     	<a href="https://moodle.uwm.edu.pl/enrol/index.php?id=5426/" style="color:black"> FoodDeli.pl</a>
   	</div>

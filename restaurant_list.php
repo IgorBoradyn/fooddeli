@@ -32,11 +32,11 @@
     				<label class="input-group-text" for="inputGroupSelect01" style="color: #fd7e14">Sortuj według</label>
   				</div>
   				<select class="custom-select" id="inputGroupSelect01">
-   					<option selected>Najlepsze dopasowanie</option>
-    				<option value="1">Najpopularniejsze</option>
-    				<option value="2">Opinie</option>
-   					<option value="3">Czas dostawy</option>
-   					<option value="4">Koszt dostawy</option>
+   					<option value="1" selected>Najlepsze dopasowanie</option>
+    				<option value="2">Najpopularniejsze</option>
+    				<option value="3">Opinie</option>
+   					<option value="4">Czas dostawy</option>
+   					<option value="5">Koszt dostawy</option>
 
   				</select>
   			</div>
@@ -47,7 +47,7 @@
 <div class="container-fluid bg-light">
 	<div class="row" style="width: 85%; margin-left: auto; margin-right: auto;">
   		<div class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
-  			<a href="index3.php" style="color: black; text-decoration: none;">
+  			<a href="product_list.php" style="color: black; text-decoration: none;">
 				<div class="row">
 					<div class="col-2 p-0 border bordercolor">
 						<img src="wall.JPEG" class="img-fluid" alt="Responsive image">
@@ -76,37 +76,7 @@
   		</div>
   		<div class="w-100" style="padding-top: 30px"></div>
   		<div class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
-  			<a href="index3.php" style="color: black; text-decoration: none;">
-				<div class="row">
-					<div class="col-2 p-0 border bordercolor">
-						<img src="wall.JPEG" class="img-fluid" alt="Responsive image">
-					</div>
-					<div class="col-10">
-						<div class="row" style="min-height: 100%;">
-		  					<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Cudne Manowce Restaurant</div>
-		  					<div class="w-100"></div>
-		  					<div class="w-100"></div>
-		  					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
-		  						<i class="fas fa-star" style="color: #fd7e14"></i> 
-		  							4.5 (111)
-		  					</div>
-		 					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
-		 						<i class="fas fa-clock" style="color: #fd7e14"></i>
-		 							60-75 min
-		 					</div>
-		  					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
-		  						<i class="fas fa-bicycle" style="color: #fd7e14"></i>
-		  							10 zł
-
-		  					</div>
-						</div>
-					</div>
-				</div>
-			</a>
-  		</div>
-  		<div class="w-100" style="padding-top: 30px"></div>
-  		<div class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
-  			<a href="index3.php" style="color: black; text-decoration: none;">
+  			<a href="product_list.php" style="color: black; text-decoration: none;">
 				<div class="row">
 					<div class="col-2 p-0 border bordercolor">
 						<img src="wall.JPEG" class="img-fluid" alt="Responsive image">
@@ -136,7 +106,37 @@
   		</div>
   		<div class="w-100" style="padding-top: 30px"></div>
   		<div class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
-  			<a href="index3.php" style="color: black; text-decoration: none;">
+  			<a href="product_list.php" style="color: black; text-decoration: none;">
+				<div class="row">
+					<div class="col-2 p-0 border bordercolor">
+						<img src="wall.JPEG" class="img-fluid" alt="Responsive image">
+					</div>
+					<div class="col-10">
+						<div class="row" style="min-height: 100%;">
+		  					<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Cudne Manowce Restaurant</div>
+		  					<div class="w-100"></div>
+		  					<div class="w-100"></div>
+		  					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
+		  						<i class="fas fa-star" style="color: #fd7e14"></i> 
+		  							4.5 (111)
+		  					</div>
+		 					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
+		 						<i class="fas fa-clock" style="color: #fd7e14"></i>
+		 							60-75 min
+		 					</div>
+		  					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
+		  						<i class="fas fa-bicycle" style="color: #fd7e14"></i>
+		  							10 zł
+
+		  					</div>
+						</div>
+					</div>
+				</div>
+			</a>
+  		</div>
+  		<div class="w-100" style="padding-top: 30px"></div>
+  		<div class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
+  			<a href="product_list.php" style="color: black; text-decoration: none;">
 				<div class="row">
 					<div class="col-2 p-0 border bordercolor">
 						<img src="wall.JPEG" class="img-fluid" alt="Responsive image">

@@ -20,7 +20,7 @@
   	<div class="row">
     	<div class="col-2 text-center">
       		<div class="bg-light text-center" style="height: 0px;">
-				<button class="btn btn-light border" id='back' type="button" onclick="location.href='index3.php'" style="margin-top: -95px; width: 90px" >Powrót</button>
+				<button class="btn btn-light border" id='back' type="button" onclick="location.href='product_list.php'" style="margin-top: -95px; width: 90px" >Powrót</button>
 			</div>
     	</div>
   	</div>
@@ -170,11 +170,11 @@
       				</div>
       				<div class="modal-body bg-light rounded">
 			      		<ul class="list-group list-group-flush">
-				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='index4.php'">Informacje ogólne</button>
-				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='index4.php'">Moje konto</button>
-				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='index4.php'">Zamówienia</button>
-				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='index4.php'">Płatności</button>
-				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='index4.php'">Dostawa</button>
+				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php'">Informacje ogólne</button>
+				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php'">Moje konto</button>
+				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php'">Zamówienia</button>
+				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php'">Płatności</button>
+				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php'">Dostawa</button>
 						</ul>
       				</div>
     			</div>
@@ -306,14 +306,14 @@
   		<div class="row">
     		<div class="col text-center pt-2 pb-4">
       			<div class="bg-light text-center" style="height: 0px;">
-					<button class="btn border bordercolor resto shadow-none btn-lg" id='back' type="button" onclick="location.href='index6.php'" style="background: rgb(234, 236, 239);">Zamów</button>
+					<button class="btn border bordercolor resto shadow-none btn-lg" id='back' type="button" onclick="location.href='delivery_data.php'" style="background: rgb(234, 236, 239);">Zamów</button>
 				</div>
     		</div>
   		</div>
 	</div>
 </div>
 
-<footer class="page-footer font-small bg-light"><div class=​"row" style=​"width:​ 85%;​ margin-left:​ auto;​ margin-right:​ auto;​">​
+<footer class="page-footer font-small bg-light"><div class="row" style="width: 85%; margin-left: auto; margin-right: auto;">
 	<div class="footer-copyright text-center py-3">© 2022 Copyright:
     	<a href="https://moodle.uwm.edu.pl/enrol/index.php?id=5426/" style="color:black"> FoodDeli.pl</a>
   	</div>
