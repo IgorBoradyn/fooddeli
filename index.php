@@ -16,7 +16,7 @@
 
 <div class="text-center bg-light" id='box'>
 	<img src="wall.JPEG" class="img-fluid" alt="Responsive image">
-	<button class = "btn btn-light" type="button" id='button' onclick="location.href='restaurant_list.php'">Lista restauracji</button>
+	<button class = "btn bg-light border bordercolor resto shadow-none" type="button" id='button' onclick="location.href='restaurant_list.php'">Lista restauracji</button>
 </div>
 
 <div class="container-fluid bg-light" style="margin-top: -21%; padding: 20px;">
@@ -54,7 +54,7 @@
   	</div>
 </div>
 
-<footer class="page-footer fixed-bottom font-small bg-light">
+<footer class="page-footer font-small bg-light">
 	<div class="footer-copyright text-center py-3">© 2022 Copyright:
     	<a href="https://moodle.uwm.edu.pl/enrol/index.php?id=5426/" style="color:black"> FoodDeli.pl</a>
   	</div>

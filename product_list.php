@@ -211,9 +211,8 @@
     				<label class="input-group-text" for="inputGroupSelect01" style="color: #fd7e14">Sortuj według</label>
   				</div>
   				<select class="custom-select" id="inputGroupSelect01">
-   					<option selected>Najpopularniejsze</option>
-    				<option value="1">Opinie</option>
-    				<option value="2">Liczba opini</option>
+   					<option selected>Najlepsze dopasowanie</option>
+    				<option value="1">Cena</option>
   				</select>
   			</div>
     	</div>
@@ -235,8 +234,6 @@
 		  					<div class="col h-50 lead" style="padding-left: 10%; font-size: 16px;">30 Hot Wings (pikantne skrzydełka), 2x frytki 40g</div>
 		  					<div class="w-100"></div>
 		  					<div class="col text-right lead" style="padding-bottom: 15px; padding-right: 10%; font-size: 22px;">
-		  						<i class="fas fa-star" style="color: #fd7e14"></i> 
-		  							4.5 (30)&emsp;
 		 						<i class="fas fa-money-bill-wave-alt" style="color: #fd7e14"></i>
 		 							39,00 zł
 		 					</div>
@@ -277,8 +274,6 @@
 		  					<div class="col h-50 lead" style="padding-left: 10%; font-size: 16px;">30 Hot Wings (pikantne skrzydełka), 2x frytki 40g</div>
 		  					<div class="w-100"></div>
 		  					<div class="col text-right lead" style="padding-bottom: 15px; padding-right: 10%; font-size: 22px;">
-		  						<i class="fas fa-star" style="color: #fd7e14"></i> 
-		  							4.5 (30)&emsp;
 		 						<i class="fas fa-money-bill-wave-alt" style="color: #fd7e14"></i>
 		 							39,00 zł
 		 					</div>
@@ -319,8 +314,6 @@
 		  					<div class="col h-50 lead" style="padding-left: 10%; font-size: 16px;">30 Hot Wings (pikantne skrzydełka), 2x frytki 40g</div>
 		  					<div class="w-100"></div>
 		  					<div class="col text-right lead" style="padding-bottom: 15px; padding-right: 10%; font-size: 22px;">
-		  						<i class="fas fa-star" style="color: #fd7e14"></i> 
-		  							4.5 (30)&emsp;
 		 						<i class="fas fa-money-bill-wave-alt" style="color: #fd7e14"></i>
 		 							39,00 zł
 		 					</div>
@@ -361,8 +354,6 @@
 		  					<div class="col h-50 lead" style="padding-left: 10%; font-size: 16px;">30 Hot Wings (pikantne skrzydełka), 2x frytki 40g</div>
 		  					<div class="w-100"></div>
 		  					<div class="col text-right lead" style="padding-bottom: 15px; padding-right: 10%; font-size: 22px;">
-		  						<i class="fas fa-star" style="color: #fd7e14"></i> 
-		  							4.5 (30)&emsp;
 		 						<i class="fas fa-money-bill-wave-alt" style="color: #fd7e14"></i>
 		 							39,00 zł
 		 					</div>
