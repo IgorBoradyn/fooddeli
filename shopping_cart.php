@@ -2,7 +2,7 @@
 <html lang='pl'>
 <head>
 	<meta charset="utf-8">
-	<title>FoodDeli - Cudowne Manowce Restaurant</title>
+	<title>FoodDeli - Koszyk</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   	<link rel="stylesheet" href="main.css">
@@ -14,30 +14,20 @@
 
 <header></header>
 
-<h2 class='fluid bg-light text-center mb-0 pt-4 pb-3'>Cudowne Manowce Restaurant</h2>
+<h2 class='fluid bg-light text-center mb-0 pt-4 pb-3'>Cudowne Manowce Restaurant - Koszyk</h2>
 
 <div class="container">
   	<div class="row">
     	<div class="col-2 text-center">
       		<div class="bg-light text-center" style="height: 0px;">
-				<button class="btn btn-light border" id='back' type="button" onclick="location.href='index2.php'" style="margin-top: -95px; width: 90px" >Powrót</button>
-			</div>
-    	</div>
-    	<div class="col-8">
-    	
-    	</div>
-    	<div class="col-2 text-center">
-     		<div class="bg-light text-center" style="height: 0px;">
-				<button class="btn btn-light border" id='back' type="button" onclick="location.href='index5.php'" style="margin-top: -95px; width: 90px" >
-					<i class="fas fa-shopping-cart"></i>
-				</button>
+				<button class="btn btn-light border" id='back' type="button" onclick="location.href='product_list.php'" style="margin-top: -95px; width: 90px" >Powrót</button>
 			</div>
     	</div>
   	</div>
 </div>
 
 
-<div class="bg-light text-center">
+<div class="bg-light text-center pb-3">
 	<div class="btn-group" role="group" aria-label="Basic example" style="margin-left: auto; margin-right:auto;">
   		<button type="button" class="btn border bordercolor resto shadow-none" data-toggle="modal" data-target="#exampleModal" style="background: rgb(234, 236, 239);">O restauracji</button>
 		<div class="modal fade rounded" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -180,11 +170,11 @@
       				</div>
       				<div class="modal-body bg-light rounded">
 			      		<ul class="list-group list-group-flush">
-				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='index4.php'">Informacje ogólne</button>
-				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='index4.php'">Moje konto</button>
-				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='index4.php'">Zamówienia</button>
-				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='index4.php'">Płatności</button>
-				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='index4.php'">Dostawa</button>
+				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php'">Informacje ogólne</button>
+				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php'">Moje konto</button>
+				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php'">Zamówienia</button>
+				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php'">Płatności</button>
+				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php'">Dostawa</button>
 						</ul>
       				</div>
     			</div>
@@ -194,43 +184,16 @@
 </div>
 
 <div class="container-fluid bg-light">
-	<div class="row" style="padding: 16px;">
-    	<div class="col text-center">
-     		<div class="input-group m-2" style="max-width: 100%; vertical-align: middle; padding-left: 7%;">
-  				<div class="input-group-prepend">
-    				<span class="input-group-text" id="basic-addon1">
-    					<i class="fas fa-search" style="color: #fd7e14"></i>
-    				</span>
-  				</div>
-  				<input type="text" class="form-control" placeholder="Wyszukaj" aria-label="Wyszukaj" aria-describedby="basic-addon1">
-			</div>
-    	</div>
-    	<div class="col text-center">
-      		<div class="input-group m-2" style="vertical-align: middle; padding-right: 7%">
-  				<div class="input-group-prepend">
-    				<label class="input-group-text" for="inputGroupSelect01" style="color: #fd7e14">Sortuj według</label>
-  				</div>
-  				<select class="custom-select" id="inputGroupSelect01">
-   					<option selected>Najpopularniejsze</option>
-    				<option value="1">Opinie</option>
-    				<option value="2">Liczba opini</option>
-  				</select>
-  			</div>
-    	</div>
-  	</div>
-</div>
-
-<div class="container-fluid bg-light">
 	<div class="row" style="width: 85%; margin-left: auto; margin-right: auto;">
   		<div class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
-  			<a href="index.php" style="color: black; text-decoration: none;">
+  			<a href="ndex.php" style="color: black; text-decoration: none;">
 				<div class="row">
 					<div class="col-2 p-0 border bordercolor">
 						<img src="wall.JPEG" class="img-fluid" alt="Responsive image">
 					</div>
 					<div class="col-10">
 						<div class="row" style="min-height: 100%;">
-		  					<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Kubełek 30 Hot Wings</div>
+		  					<div class="col h-50 lead" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Kubełek 30 Hot Wings</div>
 		  					<div class="w-100"></div>
 		  					<div class="col h-50 lead" style="padding-left: 10%; font-size: 16px;">30 Hot Wings (pikantne skrzydełka), 2x frytki 40g</div>
 		  					<div class="w-100"></div>
@@ -246,21 +209,8 @@
 			</a>
   		</div>
   		<div class="col-1" style="display: flex; justify-content: center; align-items: center;">
-  			<div class="input-group-vertical p-auto ml-3">
-				<span class="input-group-btn bg-light">
-			    	<button class="btn btn-pluss border bordercolor rounded-0 border-bottom-0 p-2" type="button" style="width: 35px; display: flex justify-content: center; align-items: center; color: #fd7e14">
-			    		<i class="fas fa-plus" style="width: 17px; height: 17px;"></i>
-			    	</button>
-			  	</span>
-			  	<input type="text" class="form-control no-padding add-color text-center height-25 border bordercolor rounded-0" maxlength="2" value="0" style="width: 35px; color: black;"disabled>
-			  	<span class="input-group-btn">
-			    	<button class="btn btn-minuse border bordercolor rounded-0 border-top-0 p-2" type="button" style="width: 35px; display: flex justify-content: center; align-items: center; color: #fd7e14">
-			    		<i class="fas fa-minus" style="width: 17px; height: 17px;"></i>
-			    	</button>
-			  	</span>
-			</div>
 			<button id="btn_plus" class="btn ml-2">
-				<i class="fas fa-plus"></i>
+				<i class="fas fa-minus"></i>
 			</button>
   		</div>
   		<div class="w-100" style="padding-top: 30px"></div>
@@ -272,7 +222,7 @@
 					</div>
 					<div class="col-10">
 						<div class="row" style="min-height: 100%;">
-		  					<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Kubełek 30 Hot Wings</div>
+		  					<div class="col h-50 lead" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Kubełek 30 Hot Wings</div>
 		  					<div class="w-100"></div>
 		  					<div class="col h-50 lead" style="padding-left: 10%; font-size: 16px;">30 Hot Wings (pikantne skrzydełka), 2x frytki 40g</div>
 		  					<div class="w-100"></div>
@@ -288,21 +238,8 @@
 			</a>
   		</div>
   		<div class="col-1" style="display: flex; justify-content: center; align-items: center;">
-  			<div class="input-group-vertical p-auto ml-3">
-				<span class="input-group-btn bg-light">
-			    	<button class="btn btn-pluss border bordercolor rounded-0 border-bottom-0 p-2" type="button" style="width: 35px; display: flex justify-content: center; align-items: center; color: #fd7e14">
-			    		<i class="fas fa-plus" style="width: 17px; height: 17px;"></i>
-			    	</button>
-			  	</span>
-			  	<input type="text" class="form-control no-padding add-color text-center height-25 border bordercolor rounded-0" maxlength="2" value="0" style="width: 35px; color: black;"disabled>
-			  	<span class="input-group-btn">
-			    	<button class="btn btn-minuse border bordercolor rounded-0 border-top-0 p-2" type="button" style="width: 35px; display: flex justify-content: center; align-items: center; color: #fd7e14">
-			    		<i class="fas fa-minus" style="width: 17px; height: 17px;"></i>
-			    	</button>
-			  	</span>
-			</div>
 			<button id="btn_plus" class="btn ml-2">
-				<i class="fas fa-plus"></i>
+				<i class="fas fa-minus"></i>
 			</button>
   		</div>
   		<div class="w-100" style="padding-top: 30px"></div>
@@ -314,7 +251,7 @@
 					</div>
 					<div class="col-10">
 						<div class="row" style="min-height: 100%;">
-		  					<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Kubełek 30 Hot Wings</div>
+		  					<div class="col h-50 lead" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Kubełek 30 Hot Wings</div>
 		  					<div class="w-100"></div>
 		  					<div class="col h-50 lead" style="padding-left: 10%; font-size: 16px;">30 Hot Wings (pikantne skrzydełka), 2x frytki 40g</div>
 		  					<div class="w-100"></div>
@@ -330,33 +267,20 @@
 			</a>
   		</div>
   		<div class="col-1" style="display: flex; justify-content: center; align-items: center;">
-  			<div class="input-group-vertical p-auto ml-3">
-				<span class="input-group-btn bg-light">
-			    	<button class="btn btn-pluss border bordercolor rounded-0 border-bottom-0 p-2" type="button" style="width: 35px; display: flex justify-content: center; align-items: center; color: #fd7e14">
-			    		<i class="fas fa-plus" style="width: 17px; height: 17px;"></i>
-			    	</button>
-			  	</span>
-			  	<input type="text" class="form-control no-padding add-color text-center height-25 border bordercolor rounded-0" maxlength="2" value="0" style="width: 35px; color: black;"disabled>
-			  	<span class="input-group-btn">
-			    	<button class="btn btn-minuse border bordercolor rounded-0 border-top-0 p-2" type="button" style="width: 35px; display: flex justify-content: center; align-items: center; color: #fd7e14">
-			    		<i class="fas fa-minus" style="width: 17px; height: 17px;"></i>
-			    	</button>
-			  	</span>
-			</div>
 			<button id="btn_plus" class="btn ml-2">
-				<i class="fas fa-plus"></i>
+				<i class="fas fa-minus"></i>
 			</button>
   		</div>
   		<div class="w-100" style="padding-top: 30px"></div>
   		<div class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
-  			<a href="index.php" style="color: black; text-decoration: none;">
+  			<a href="index.php" style="color: black;     text-decoration: none;">
 				<div class="row">
 					<div class="col-2 p-0 border bordercolor">
 						<img src="wall.JPEG" class="img-fluid" alt="Responsive image">
 					</div>
 					<div class="col-10">
 						<div class="row" style="min-height: 100%;">
-		  					<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Kubełek 30 Hot Wings</div>
+		  					<div class="col h-50 lead" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Kubełek 30 Hot Wings</div>
 		  					<div class="w-100"></div>
 		  					<div class="col h-50 lead" style="padding-left: 10%; font-size: 16px;">30 Hot Wings (pikantne skrzydełka), 2x frytki 40g</div>
 		  					<div class="w-100"></div>
@@ -372,27 +296,24 @@
 			</a>
   		</div>
   		<div class="col-1" style="display: flex; justify-content: center; align-items: center;">
-  			<div class="input-group-vertical p-auto ml-3">
-				<span class="input-group-btn bg-light">
-			    	<button class="btn btn-pluss border bordercolor rounded-0 border-bottom-0 p-2" type="button" style="width: 35px; display: flex justify-content: center; align-items: center; color: #fd7e14">
-			    		<i class="fas fa-plus" style="width: 17px; height: 17px;"></i>
-			    	</button>
-			  	</span>
-			  	<input type="text" class="form-control no-padding add-color text-center height-25 border bordercolor rounded-0" maxlength="2" value="0" style="width: 35px; color: black;"disabled>
-			  	<span class="input-group-btn">
-			    	<button class="btn btn-minuse border bordercolor rounded-0 border-top-0 p-2" type="button" style="width: 35px; display: flex justify-content: center; align-items: center; color: #fd7e14">
-			    		<i class="fas fa-minus" style="width: 17px; height: 17px;"></i>
-			    	</button>
-			  	</span>
-			</div>
 			<button id="btn_plus" class="btn ml-2">
-				<i class="fas fa-plus"></i>
+				<i class="fas fa-minus"></i>
 			</button>
+  		</div>
+	</div>
+	<h2 class='fluid bg-light text-right mb-0 pt-4 pb-1' style="margin-right: 10%">Do zapłaty: 156zł</h2>
+	<div class="container">
+  		<div class="row">
+    		<div class="col text-center pt-2 pb-4">
+      			<div class="bg-light text-center" style="height: 0px;">
+					<button class="btn border bordercolor resto shadow-none btn-lg" id='back' type="button" onclick="location.href='delivery_data.php'" style="background: rgb(234, 236, 239);">Zamów</button>
+				</div>
+    		</div>
   		</div>
 	</div>
 </div>
 
-<footer class="page-footer font-small bg-light"><div class=​"row" style=​"width:​ 85%;​ margin-left:​ auto;​ margin-right:​ auto;​">​
+<footer class="page-footer font-small bg-light"><div class="row" style="width: 85%; margin-left: auto; margin-right: auto;">
 	<div class="footer-copyright text-center py-3">© 2022 Copyright:
     	<a href="https://moodle.uwm.edu.pl/enrol/index.php?id=5426/" style="color:black"> FoodDeli.pl</a>
   	</div>

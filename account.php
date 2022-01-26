@@ -32,15 +32,15 @@
   		</div>
   		<div class="col-5 border-left pt-4 text-center">
   			<div class="btn-group-vertical" role="group" aria-label="Basic example">
-  				<button type="button" class="btn border bordercolor resto shadow-none mb-3 rounded" style="background: rgb(234, 236, 239);" onclick="location.href='index_change_email.php'">Zmień e-mail</button>
-  				<button type="button" class="btn border bordercolor resto shadow-none mb-3 rounded" style="background: rgb(234, 236, 239);" onclick="location.href='index_change_password.php'">Zmień hasło</button>
+  				<button type="button" class="btn border bordercolor resto shadow-none mb-3 rounded" style="background: rgb(234, 236, 239);" onclick="location.href='change_email.php'">Zmień e-mail</button>
+  				<button type="button" class="btn border bordercolor resto shadow-none mb-3 rounded" style="background: rgb(234, 236, 239);" onclick="location.href='change_password.php'">Zmień hasło</button>
 			</div>
   		</div>
   		<div class="col-1"></div>
 	</div>
 </div>
 
-<footer class="page-footer fixed-bottom font-small bg-light"><div class=​"row" style=​"width:​ 85%;​ margin-left:​ auto;​ margin-right:​ auto;​">​
+<footer class="page-footer fixed-bottom font-small bg-light"><div class="row" style="width: 85%; margin-left: auto; margin-right: auto;">
 	<div class="footer-copyright text-center py-3">© 2022 Copyright:
     	<a href="https://moodle.uwm.edu.pl/enrol/index.php?id=5426/" style="color:black"> FoodDeli.pl</a>
   	</div>

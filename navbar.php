@@ -3,7 +3,7 @@
         <h3 class="mb-0">FoodDeli</h3>
     </a>
     <form class="form-inline" id="navbar-button">
-        <button class="btn btn-outline-light mr-1" type="button" onclick="location.href='index_login.php'">Zaloguj się</button>
-        <button class="btn btn-light" type="button" onclick="location.href='index_register_user.php'">Zarejestruj się</button>
+        <button class="btn btn-outline-light mr-1" type="button" onclick="location.href='login.php'">Zaloguj się</button>
+        <button class="btn btn-light" type="button" onclick="location.href='register_user.php'">Zarejestruj się</button>
     </form>
 </nav>

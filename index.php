@@ -16,7 +16,7 @@
 
 <div class="text-center bg-light" id='box'>
 	<img src="wall.JPEG" class="img-fluid" alt="Responsive image">
-	<button class = "btn btn-light" type="button" id='button' onclick="location.href='index2.php'">Lista restauracji</button>
+	<button class = "btn btn-light" type="button" id='button' onclick="location.href='restaurant_list.php'">Lista restauracji</button>
 </div>
 
 <div class="container-fluid bg-light" style="margin-top: -21%; padding: 20px;">
