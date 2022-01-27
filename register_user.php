@@ -41,51 +41,61 @@
 		<div class="col placeholder">
 			<label for="validationCustom01">E-mail</label>
 			<input type="email" class="form-control" id="validationCustom01" name="email" placeholder="E-mail" required>
+			<div class="invalid-feedback">Niepoprawny e-mail</div>
 		</div>
 		<div class="w-100" style="padding-top: 30px"></div>
 		<div class="col placeholder">
 			<label for="validationCustom02">Hasło</label>
       		<input type="password" class="form-control" id="validationCustom02" name="password" placeholder="Hasło" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Twoje hasło powinno składać się z przynajmniej 8 znaków, zawierać zarówno małą i wielką literę oraz cyfrę." required>
+			<div class="invalid-feedback">Niepoprawne hasło. Twoje hasło powinno składać się z przynajmniej 8 znaków, zawierać zarówno małą i wielką literę oraz cyfrę.</div>
 		</div>
 		<div class="w-100" style="padding-top: 30px"></div>
 				<div class="col placeholder">
 			<label for="validationCustom03">Potwierdź hasło</label>
       		<input type="password" class="form-control" id="validationCustom03" placeholder="Potwierdź hasło" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Twoje hasło powinno składać się z przynajmniej 8 znaków, zawierać zarówno małą i wielką literę oraz cyfrę." required>
+			<div class="invalid-feedback">Niepoprawne hasło. Twoje hasło powinno składać się z przynajmniej 8 znaków, zawierać zarówno małą i wielką literę oraz cyfrę.</div>
 		</div>
 		<div class="w-100" style="padding-top: 30px"></div>
 		<div class="col placeholder">
       		<label for="validationCustom04">Imię i nazwisko</label>
       		<input type="text" class="form-control" id="validationCustom04" name="first_last_name" placeholder="Wpisz swoje imię i nazwisko" required>
+      		<div class="invalid-feedback">Należy podać imię i nazwisko</div>
 		</div>
 		<div class="w-100" style="padding-top: 30px"></div>
 		<div class="col placeholder">
       		<label for="validationCustom05">Ulica</label>
       		<input type="text" class="form-control" id="validationCustom05" name="street" placeholder="Wpisz nazwę ulicy" required>
+      		<div class="invalid-feedback">Nazwa ulicy jest wymagana</div>
 		</div>
 		<div class="w-100" style="padding-top: 30px"></div>
 		<div class="col placeholder">
 			<label for="validationCustom06">Numer budynku</label>
 			<input type="text" class="form-control" id="validationCustom06" name="street_number" placeholder="Wpisz numer budynku" required>
+			<div class="invalid-feedback">Numer domu jest wymagany</div>
 		</div>
 		<div class="w-100" style="padding-top: 30px"></div>
 		<div class="col placeholder">
 			<label for="validationCustom07">Numer mieszkania</label>
 			<input type="text" class="form-control" id="validationCustom07" name="flat_number" placeholder="Wpisz numer mieszkania" required>
+			<div class="invalid-feedback">Numer mieszkania jest wymagany</div>
 		</div>
 		<div class="w-100" style="padding-top: 30px"></div>
 		<div class="col placeholder">
 			<label for="validationCustom08">Numer telefonu</label>
 			<input type="tel" class="form-control" id="validationCustom08" name="phone" placeholder="Wpisz swój numer telefonu" pattern="[0-9]{9}" required>
+			<div class="invalid-feedback">Należy podać numer telefonu</div>
 		</div>
 		<div class="w-100" style="padding-top: 30px"></div>
 		<div class="col placeholder">
       		<label for="validationCustom09">Kod pocztowy</label>
 			<input type="text" class="form-control" id="validationCustom09" name="postcode" placeholder="Wpisz swój kod pocztowy" pattern="[0-9]{2}[-][0-9]{3}" required>
+      		<div class="invalid-feedback">Należy podać kod pocztowy</div>
 		</div>
 		<div class="w-100" style="padding-top: 30px"></div>
 		<div class="col placeholder">
 			<label for="validationCustom10">Miasto</label>
 			<input type="text" class="form-control" id="validationCustom10" name="city" placeholder="Wpisz swoje miasto" required>
+			<div class="invalid-feedback">Należy podać miasto</div>
 		</div>
 		<div class="w-100" style="padding-top: 30px"></div>
 		<div class="col">
@@ -100,8 +110,8 @@
     			<p>Masz już konto? <a href='index_login.php' style="color: #fd7e14">Zaloguj się</a></p>
  			</div>
 		</div>
-		<div class="invalid-feedback">Dla podanego adresu email już jest utworzone konto</div>
-		<div class="valid-feedback">Konto zostało utworzone</div>
+		<div class="login-err" style="display: none; color: red;">Dla podanego adresu email już jest utworzone konto</div>
+		<div class="login-ok" style="display: none; color: green;">Konto zostało utworzone</div>
 	</div>
 </form>
 
@@ -118,12 +128,12 @@
     if (isset($_SESSION['acc_taken'])){
 		if ($_SESSION['acc_taken']){
 ?> 
-			$('.invalid-feedback').css('display', 'block');
+			$('.login-err').css('display', 'block');
 <?php 	
 		} 
 		else {
 ?>
-			$('.valid-feedback').css('display', 'block');
+			$('.login-ok').css('display', 'block');
 <?php 	}
 		unset($_SESSION['acc_taken']);
 	} ?>
@@ -149,7 +159,7 @@
 
 	function validatePassword(){
 		if(password.value != confirm_password.value) {
-			confirm_password.setCustomValidity("Passwords Don't Match");
+			confirm_password.setCustomValidity("Hasła nie są takie same");
 		} else {
 			confirm_password.setCustomValidity('');
 		}

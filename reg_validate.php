@@ -29,7 +29,6 @@
 			
 			if ($rows_login>=1){
                 $_SESSION['acc_taken'] = true;
-                header('Location: register_user.php');
             }
 			else{
 				$connect->query("INSERT INTO users(email, password, first_name, last_name) VALUES ('$email', '$password', '$firstName', '$lastName')");
@@ -37,8 +36,8 @@
 				$connect->query("INSERT INTO clients(ID, phone, street, street_number, flat_number, city, postcode) VALUES ('$userID', '$phone', '$street', '$streetNumber', '$flatNumber', '$city', '$postcode')");
                 
                 $_SESSION['acc_taken'] = false;
-                header('Location: register_user.php');
             }
+            header('Location: register_user.php');
         }
     }
     else header('Location: index.php');

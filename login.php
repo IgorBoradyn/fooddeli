@@ -27,12 +27,14 @@
 	<div class="form-row" style="width: 40%; margin-left: auto; margin-right: auto;">
 		<div class="col placeholder">
 			<label for="validationCustom01">E-mail</label>
-			<input type="email" class="form-control" id="validationCustom01" placeholder="E-mail" name="email" required>
+			<input type="email" class="form-control" id="validationCustom01" name="email" placeholder="E-mail" name="email" required>
+			<div class="invalid-feedback">Niepoprawny e-mail</div>
 		</div>
 		<div class="w-100" style="padding-top: 30px"></div>
 		<div class="col placeholder">
 			<label for="validationCustom02">Hasło</label>
-      		<input type="password" class="form-control" id="validationCustom01" placeholder="Hasło" name="password" required>
+      		<input type="password" class="form-control" id="validationCustom01" name="password" placeholder="Hasło" name="password" required>
+			<div class="invalid-feedback">Niepoprawne hasło</div>
 		</div>
 		<div class="w-100" style="padding-top: 30px"></div>
 		<div class="col">
@@ -41,13 +43,13 @@
         <div class="w-100" style="padding-top: 30px"></div>
 		<div class="col">    	
 			<div class="col text-center pb-4">
- 				<input class="btn border bordercolor resto shadow-none btn-lg" id='back' type="submit" value="Zaloguj się" style="background: rgb(234, 236, 239);">
+ 				<button class="btn border bordercolor resto shadow-none btn-lg" id='back' type="submit" style="background: rgb(234, 236, 239);">Zaloguj się</button>
     		</div>
 			<div class="text-center">
     			<p>Nie masz konta? <a href='register_user.php' style="color: #fd7e14">Uwtórz konto</a></p>
  			</div>
 		</div>
-		<div class="invalid-feedback">Niepoprawne dane</div>
+		<div class="login-err" style="display: none; color: red;">Niepoprawne dane</div>
 	</div>
 </form>
 
@@ -62,7 +64,7 @@
 <?php
     if (isset($_SESSION['login_err']) && $_SESSION['login_err']){
 ?> 
-		$('.invalid-feedback').css('display', 'block');
+		$('.login-err').css('display', 'block');
 <?php 	
 		unset($_SESSION['login_err']);
 	} 

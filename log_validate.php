@@ -24,7 +24,7 @@
 
             $user = $users->fetch_assoc();
 
-            if ($user['password'] == $pass) {
+            if ($user['password'] == $pass){
                 $userID = $user['ID'];
                 $_SESSION['logged'] = true;
                 $_SESSION['userID'] = $userID;
@@ -32,16 +32,16 @@
                 $_SESSION['firstName'] = $user['first_name'];
                 $_SESSION['lastName'] = $user['last_name'];
                 
-                $couriers = $connect->query("SELECT * FROM couriers WHERE ID='$uID'");
+                $couriers = $connect->query("SELECT * FROM couriers WHERE ID='$userID'");
                 
                 $rows_num = $couriers->num_rows;
                 if($rows_num >= 1){
                     $courier = $couriers->fetch_assoc();
-                    $connect->query("UPDATE couriers SET status = 'avaible' WHERE ID = '$uID'");
+                    $connect->query("UPDATE couriers SET status = 'avaible' WHERE ID = '$userID'");
                     $_SESSION['isCourier'] = true;
                 }
                 else{
-                    $client = $connect->query("SELECT * FROM clients WHERE ID='$uID'")->fetch_assoc();
+                    $client = $connect->query("SELECT * FROM clients WHERE ID='$userID'")->fetch_assoc();
                     $_SESSION['phone'] = $client['phone'];
                     $_SESSION['street'] = $client['street'];
                     $_SESSION['streetNumber'] = $client['street_number'];
@@ -52,8 +52,10 @@
 
                 header('Location: index.php');
             }
-            $_SESSION['login_err'] = true;
-            header('Location: login.php');
+            else{
+                $_SESSION['login_err'] = true;
+                header('Location: login.php');
+            }
 		}
 	}
     else header('Location: index.php');
