@@ -254,7 +254,7 @@
 			$price = number_format($product['price'], 2);
 echo<<<EOT
   		<div id="{$productID}" class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
-  			<a href="product_list.php?id={$restaurantID}#{$productID}" class="product-href" style="color: black; text-decoration: none;">
+  			<a href="product_list.php?id={$restaurantID}#{$productID}" class="product-add" style="color: black; text-decoration: none;">
 				<div class="row">
 					<div class="col-2 p-0 border bordercolor">
 						<img src="{$img}" class="img-fluid" alt="Responsive image">
@@ -290,7 +290,7 @@ EOT;
 <script>
 	$("header").load("navbar.php");
 	
-	$(".product-href").click(function(event){
+	$(".product-add").click(function(event){
 		event.preventDefault();
 
 		var href = this.href;
