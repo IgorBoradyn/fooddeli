@@ -45,8 +45,8 @@
                 $productsListID = $productsListID['ID'];
                 $productsListID++;
 
-                $connect->query("INSERT INTO products_list(ID, ID_product, amount) VALUES ('$productsListID', '$productID', '1')");
                 $connect->query("INSERT INTO shopping_cart(ID_client, ID_restaurant, ID_products_list) VALUES ('$userID', '$restaurantID', '$productsListID')");
+                $connect->query("INSERT INTO products_list(ID, ID_product, amount) VALUES ('$productsListID', '$productID', '1')");
             }
         }
 	}
