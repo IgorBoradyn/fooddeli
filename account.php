@@ -1,3 +1,9 @@
+<?php
+    session_start();
+	if(!(isset($_SESSION['logged']) && $_SESSION['logged']))
+		header('Location: index.php');
+?>
+
 <!DOCTYPE html>
 <html lang='pl'>
 <head>
@@ -25,29 +31,29 @@
   				<div class="form-row">
 					<div class="col-10 pb-1 pt-1">
       					<label for="validationCustom07">E-mail</label>
-      					<input type="text" class="form-control" id="validationCustom01" placeholder="z bazy danych" disabled>
+      					<input type="text" class="form-control" id="validationCustom01" placeholder="<?php echo $_SESSION['email']; ?>" disabled>
       					<label for="validationCustom07">Imię i nazwisko</label>
-      					<input type="text" class="form-control" id="validationCustom02" placeholder="z bazy danych" disabled>
+      					<input type="text" class="form-control" id="validationCustom02" placeholder="<?php echo $_SESSION['firstName']." ".$_SESSION['lastName']; ?>" disabled>
       					<label for="validationCustom07">Ulica</label>
-      					<input type="text" class="form-control" id="validationCustom03" placeholder="z bazy danych" disabled>
+      					<input type="text" class="form-control" id="validationCustom03" placeholder="<?php echo $_SESSION['street']; ?>" disabled>
       					<label for="validationCustom07">Numer budynku</label>
-      					<input type="text" class="form-control" id="validationCustom04" placeholder="z bazy danych" disabled>
+      					<input type="text" class="form-control" id="validationCustom04" placeholder="<?php echo $_SESSION['streetNumber']; ?>" disabled>
       					<label for="validationCustom07">Numer mieszkania</label>
-      					<input type="text" class="form-control" id="validationCustom05" placeholder="z bazy danych" disabled>
+      					<input type="text" class="form-control" id="validationCustom05" placeholder="<?php echo $_SESSION['flatNumber']; ?>" disabled>
       					<label for="validationCustom07">Numer telefonu</label>
-      					<input type="text" class="form-control" id="validationCustom06" placeholder="z bazy danych" disabled>
+      					<input type="text" class="form-control" id="validationCustom06" placeholder="<?php echo $_SESSION['phone']; ?>" disabled>
       					<label for="validationCustom07">Kod pocztowy</label>
-      					<input type="text" class="form-control" id="validationCustom07" placeholder="z bazy danych" disabled>
+      					<input type="text" class="form-control" id="validationCustom07" placeholder="<?php echo $_SESSION['postcode']; ?>" disabled>
       					<label for="validationCustom07">Miasto</label>
-      					<input type="text" class="form-control" id="validationCustom08" placeholder="z bazy danych" disabled>
+      					<input type="text" class="form-control" id="validationCustom08" placeholder="<?php echo $_SESSION['city']; ?>" disabled>
     				</div>
     			</div>
 			</form>
   		</div>
   		<div class="col-5 border-left pt-4 text-center">
   			<div class="btn-group-vertical" role="group" aria-label="Basic example">
-  				<button type="button" class="btn border bordercolor resto shadow-none mb-3 rounded" style="background: rgb(234, 236, 239);" onclick="location.href='index_change_email.php'">Zmień e-mail</button>
-  				<button type="button" class="btn border bordercolor resto shadow-none mb-3 rounded" style="background: rgb(234, 236, 239);" onclick="location.href='index_change_password.php'">Zmień hasło</button>
+  				<button type="button" class="btn border bordercolor resto shadow-none mb-3 rounded" style="background: rgb(234, 236, 239);" onclick="location.href='change_email.php'">Zmień e-mail</button>
+  				<button type="button" class="btn border bordercolor resto shadow-none mb-3 rounded" style="background: rgb(234, 236, 239);" onclick="location.href='change_password.php'">Zmień hasło</button>
 			</div>
   		</div>
   		<div class="col-1"></div>

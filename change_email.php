@@ -1,3 +1,9 @@
+<?php
+    session_start();
+	if(!(isset($_SESSION['logged']) && $_SESSION['logged']))
+		header('Location: index.php');
+?>
+
 <!DOCTYPE html>
 <html lang='pl'>
 <head>
@@ -21,17 +27,17 @@
   	<div class="row">
     	<div class="col-2 text-center">
       		<div class="bg-light text-center" style="height: 0px;">
-				<button class="btn btn-light border" id='back' type="button" onclick="location.href = 'index_account.php'" style = "margin-top: -95px; width: 90px" >Powrót</button>
+				<button class="btn btn-light border" id='back' type="button" onclick="location.href = 'account.php'" style = "margin-top: -95px; width: 90px" >Powrót</button>
 			</div>
     	</div>
   	</div>
 </div>
 
-<form class="needs-validation pt-2 bg-light" novalidate>
+<form method="post" action="change_email_valid.php" class="needs-validation pt-2 bg-light">
 	<div class="form-row" style="width: 40%; margin-left: auto; margin-right: auto;">
 		<div class="col placeholder">
 			<label for="validationCustom01">Nowy e-mail</label>
-			<input type="email" class="form-control" id="validationCustom01" placeholder="E-mail" required>
+			<input type="email" class="form-control" id="validationCustom01" name="new_email" placeholder="E-mail" required>
 			<div class="invalid-feedback">Niepoprawny e-mail</div>
 		</div>
         <div class="w-100" style="padding-top: 30px"></div>
@@ -40,6 +46,8 @@
  				<button class="btn border bordercolor resto shadow-none btn-lg" id='back' type="submit" style="background: rgb(234, 236, 239);">Zmień e-mail</button>
     		</div>
 		</div>
+		<div class="change-err" style="display: none; color: red;">Podany email jest już używany przez inne konto</div>
+		<div class="change-ok" style="display: none; color: green;">Zmiana przebiegła pomyślnie</div>
 	</div>
 </form>
 
@@ -51,25 +59,37 @@
 
 <script>
 	$("header").load("navbar.php");
+
+<?php
+    if (isset($_SESSION['change_err'])){
+		if ($_SESSION['change_err']){
+?> 
+			$('.change-err').css('display', 'block');
+<?php 	
+		} 
+		else {
+?>
+			$('.change-ok').css('display', 'block');
+<?php 	}
+		unset($_SESSION['change_err']);
+	} ?>
+
+	(function() {
+		'use strict';
+		window.addEventListener('load', function() {
+			var forms = document.getElementsByClassName('needs-validation');
+			var validation = Array.prototype.filter.call(forms, function(form) {
+				form.addEventListener('submit', function(event) {
+					if (form.checkValidity() === false) {
+						event.preventDefault();
+						event.stopPropagation();
+					}
+					form.classList.add('was-validated');
+				}, false);
+			});
+		}, false);
+	})();
 </script>
 
 </body>
 </html>
-
-<script>
-(function() {
-	'use strict';
-  	window.addEventListener('load', function() {
-    	var forms = document.getElementsByClassName('needs-validation');
-    	var validation = Array.prototype.filter.call(forms, function(form) {
-      		form.addEventListener('submit', function(event) {
-        		if (form.checkValidity() === false) {
-          			event.preventDefault();
-          			event.stopPropagation();
-        		}
-        		form.classList.add('was-validated');
-     		}, false);
-    	});
-  	}, false);
-})();
-</script>
