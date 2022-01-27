@@ -1,3 +1,17 @@
+<?php
+	session_start();
+	require_once "connect.php";
+
+	$connect = @new mysqli($host, $db_user, $db_password, $db_name);
+
+	$connect->set_charset('utf8');
+
+	if($connect->connect_errno!=0){
+		echo "Error: ".$connect->connect_errno;
+	}
+	else{
+?>
+
 <!DOCTYPE html>
 <html lang='pl'>
 <head>
@@ -46,27 +60,44 @@
 
 <div class="container-fluid bg-light">
 	<div class="row" style="width: 85%; margin-left: auto; margin-right: auto;">
+	<?php
+		$rows = $connect->query("SELECT * FROM restaurants");
+		$num_rows = $rows->num_rows;
+		for($i = 0; $i < $num_rows; $i++){
+			$restaurant = $rows->fetch_assoc();
+			$ID = $restaurant['ID'];
+			$img = $restaurant['photo'];
+			$name = $restaurant['name'];
+
+			$opinions_count = $connect->query("SELECT * FROM opinions WHERE restaurant_ID = '$ID'")->num_rows;
+			$opinions_avg = $connect->query("SELECT AVG(rating) AS avg FROM opinions WHERE restaurant_ID = '$ID'")->fetch_assoc();
+			$opinions_avg = $opinions_avg['avg'];
+
+			$delivery_time = "dostawy wstrzymane";
+			$delivery_cost = number_format($restaurant['delivery_cost'], 2);
+
+echo<<<EOT
   		<div class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
-  			<a href="product_list.php" style="color: black; text-decoration: none;">
+  			<a href="product_list.php?id={$ID}" style="color: black; text-decoration: none;">
 				<div class="row">
 					<div class="col-2 p-0 border bordercolor">
-						<img src="wall.JPEG" class="img-fluid" alt="Responsive image">
+						<img src="{$img}" class="img-fluid" style="width: 100%;" alt="Responsive image">
 					</div>
 					<div class="col-10">
 						<div class="row" style="min-height: 100%;">
-		  					<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Cudne Manowce Restaurant</div>
+		  					<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">{$name}</div>
 		  					<div class="w-100"></div>
 		  					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
 		  						<i class="fas fa-star" style="color: #fd7e14"></i> 
-		  							4.5 (111)
+								  	$opinions_avg ($opinions_count)
 		  					</div>
 		 					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
 		 						<i class="fas fa-clock" style="color: #fd7e14"></i>
-		 							60-75 min
+		 							{$delivery_time}
 		 					</div>
 		  					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
 		  						<i class="fas fa-bicycle" style="color: #fd7e14"></i>
-		  							10 zł
+								  	{$delivery_cost} zł
 
 		  					</div>
 						</div>
@@ -75,95 +106,9 @@
 			</a>
   		</div>
   		<div class="w-100" style="padding-top: 30px"></div>
-  		<div class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
-  			<a href="product_list.php" style="color: black; text-decoration: none;">
-				<div class="row">
-					<div class="col-2 p-0 border bordercolor">
-						<img src="wall.JPEG" class="img-fluid" alt="Responsive image">
-					</div>
-					<div class="col-10">
-						<div class="row" style="min-height: 100%;">
-		  					<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Cudne Manowce Restaurant</div>
-		  					<div class="w-100"></div>
-		  					<div class="w-100"></div>
-		  					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
-		  						<i class="fas fa-star" style="color: #fd7e14"></i> 
-		  							4.5 (111)
-		  					</div>
-		 					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
-		 						<i class="fas fa-clock" style="color: #fd7e14"></i>
-		 							60-75 min
-		 					</div>
-		  					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
-		  						<i class="fas fa-bicycle" style="color: #fd7e14"></i>
-		  							10 zł
-
-		  					</div>
-						</div>
-					</div>
-				</div>
-			</a>
-  		</div>
-  		<div class="w-100" style="padding-top: 30px"></div>
-  		<div class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
-  			<a href="product_list.php" style="color: black; text-decoration: none;">
-				<div class="row">
-					<div class="col-2 p-0 border bordercolor">
-						<img src="wall.JPEG" class="img-fluid" alt="Responsive image">
-					</div>
-					<div class="col-10">
-						<div class="row" style="min-height: 100%;">
-		  					<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Cudne Manowce Restaurant</div>
-		  					<div class="w-100"></div>
-		  					<div class="w-100"></div>
-		  					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
-		  						<i class="fas fa-star" style="color: #fd7e14"></i> 
-		  							4.5 (111)
-		  					</div>
-		 					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
-		 						<i class="fas fa-clock" style="color: #fd7e14"></i>
-		 							60-75 min
-		 					</div>
-		  					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
-		  						<i class="fas fa-bicycle" style="color: #fd7e14"></i>
-		  							10 zł
-
-		  					</div>
-						</div>
-					</div>
-				</div>
-			</a>
-  		</div>
-  		<div class="w-100" style="padding-top: 30px"></div>
-  		<div class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
-  			<a href="product_list.php" style="color: black; text-decoration: none;">
-				<div class="row">
-					<div class="col-2 p-0 border bordercolor">
-						<img src="wall.JPEG" class="img-fluid" alt="Responsive image">
-					</div>
-					<div class="col-10">
-						<div class="row" style="min-height: 100%;">
-		  					<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Cudne Manowce Restaurant</div>
-		  					<div class="w-100"></div>
-		  					<div class="w-100"></div>
-		  					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
-		  						<i class="fas fa-star" style="color: #fd7e14"></i> 
-		  							4.5 (111)
-		  					</div>
-		 					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
-		 						<i class="fas fa-clock" style="color: #fd7e14"></i>
-		 							60-75 min
-		 					</div>
-		  					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
-		  						<i class="fas fa-bicycle" style="color: #fd7e14"></i>
-		  							10 zł
-
-		  					</div>
-						</div>
-					</div>
-				</div>
-			</a>
-  		</div>
+EOT;
+		}
+	?>
 	</div>
 </div>
 
@@ -179,3 +124,4 @@
 
 </body>
 </html>
+<?php } ?>
