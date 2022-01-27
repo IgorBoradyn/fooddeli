@@ -247,13 +247,14 @@
 		$num_rows = $rows->num_rows;
 		for($i = 0; $i < $num_rows; $i++){
 			$product = $rows->fetch_assoc();
+			$productID = $product['ID'];
 			$img = $product['photo'];
 			$name = $product['name'];
 			$desc = $product['description'];
 			$price = number_format($product['price'], 2);
 echo<<<EOT
-  		<div class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
-  			<a href="index.php" style="color: black; text-decoration: none;">
+  		<div id="{$productID}" class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
+  			<a href="product_list.php?id={$restaurantID}#{$productID}" class="product-href" style="color: black; text-decoration: none;">
 				<div class="row">
 					<div class="col-2 p-0 border bordercolor">
 						<img src="{$img}" class="img-fluid" alt="Responsive image">
@@ -288,6 +289,21 @@ EOT;
 
 <script>
 	$("header").load("navbar.php");
+	
+	$(".product-href").click(function(event){
+		event.preventDefault();
+
+		var href = this.href;
+		var productID = href.split('#').pop();
+
+		$.post('add_product_to_cart.php',{
+			restID: <?php echo $restaurantID ?>,
+			productID: productID
+		}, function(){
+			window.location = href;
+		});
+
+	});
 </script>
 
 </body>
