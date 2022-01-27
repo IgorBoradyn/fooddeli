@@ -1,3 +1,19 @@
+<?php
+	session_start();
+	if(!(isset($_SESSION['logged']) && $_SESSION['logged']))
+		header("Location: index.php");
+	require_once "connect.php";
+
+	$connect = @new mysqli($host, $db_user, $db_password, $db_name);
+
+	$connect->set_charset('utf8');
+
+	if($connect->connect_errno!=0){
+		echo "Error: ".$connect->connect_errno;
+	}
+	else{
+		$restaurantID = $_GET['id'];
+?>
 <!DOCTYPE html>
 <html lang='pl'>
 <head>
@@ -20,7 +36,7 @@
   	<div class="row">
     	<div class="col-2 text-center">
       		<div class="bg-light text-center" style="height: 0px;">
-				<button class="btn btn-light border" id='back' type="button" onclick="location.href='product_list.php'" style="margin-top: -95px; width: 90px" >Powrót</button>
+				<button class="btn btn-light border" id='back' type="button" onclick="location.href='product_list.php?id=<?php echo $restaurantID; ?>'" style="margin-top: -95px; width: 90px" >Powrót</button>
 			</div>
     	</div>
   	</div>
@@ -170,11 +186,11 @@
       				</div>
       				<div class="modal-body bg-light rounded">
 			      		<ul class="list-group list-group-flush">
-				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php'">Informacje ogólne</button>
-				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php'">Moje konto</button>
-				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php'">Zamówienia</button>
-				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php'">Płatności</button>
-				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php'">Dostawa</button>
+				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php#nav-home'">Informacje ogólne</button>
+				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php#nav-profile'">Moje konto</button>
+				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php#nav-contact'">Zamówienia</button>
+				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php#nav-payment'">Płatności</button>
+				 			<button id="active_help" class="list-group-item bg-light" onclick="location.href='help.php#nav-delivery'">Dostawa</button>
 						</ul>
       				</div>
     			</div>
@@ -323,3 +339,4 @@
 
 </body>
 </html>
+<?php } ?>

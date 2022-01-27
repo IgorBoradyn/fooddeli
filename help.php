@@ -22,7 +22,7 @@
 	<div class="col-10 bg-light">
 		<nav>
   			<div class="nav nav-tabs" id="nav-tab" role="tablist">
-    			<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Informacje ogólne</a>
+    			<a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="false">Informacje ogólne</a>
     			<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Moje konto</a>
     			<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Zamówienia</a>
     			<a class="nav-item nav-link" id="nav-payment-tab" data-toggle="tab" href="#nav-payment" role="tab" aria-controls="nav-payment" aria-selected="false">Płatności</a>
@@ -30,7 +30,7 @@
   			</div>
 		</nav>
 		<div class="tab-content" id="nav-tabContent">
-  			<div id="nav-home" class="tab-pane fade show active bb-0" role="tabpanel" aria-labelledby="nav-home-tab">
+  			<div id="nav-home" class="tab-pane fade show bb-0" role="tabpanel" aria-labelledby="nav-home-tab">
   				<div class="row pt-3">
   					<div class="col-4 bg-light">
     					<div class="list-group" id="list-tab" role="tablist">
@@ -343,6 +343,11 @@
 
 <script>
 	$("header").load("navbar.php");
+	var hash = $(location).attr('hash');
+	if(hash !== "")
+		$('[href="'+hash+'"]').tab('show');
+	else
+		$('[href="#nav-home"]').tab('show');
 </script>
 
 </body>
