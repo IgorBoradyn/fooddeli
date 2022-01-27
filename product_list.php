@@ -1,3 +1,17 @@
+<?php
+	session_start();
+	require_once "connect.php";
+
+	$connect = @new mysqli($host, $db_user, $db_password, $db_name);
+
+	$connect->set_charset('utf8');
+
+	if($connect->connect_errno!=0){
+		echo "Error: ".$connect->connect_errno;
+	}
+	else{
+?>
+
 <!DOCTYPE html>
 <html lang='pl'>
 <head>
@@ -14,7 +28,12 @@
 
 <header></header>
 
-<h2 class='fluid bg-light text-center mb-0 pt-4 pb-3'>Cudowne Manowce Restaurant</h2>
+<?php
+	$restaurantID = $_GET['id'];
+	$restaurant = $connect->query("SELECT * FROM restaurants WHERE ID='$restaurantID'")->fetch_assoc();
+?>
+
+<h2 class='fluid bg-light text-center mb-0 pt-4 pb-3'><?php echo $restaurant['name']; ?></h2>
 
 <div class="container">
   	<div class="row">
@@ -28,7 +47,7 @@
     	</div>
     	<div class="col-2 text-center">
      		<div class="bg-light text-center" style="height: 0px;">
-				<button class="btn btn-light border" id='back' type="button" onclick="location.href='shopping_cart.php'" style="margin-top: -95px; width: 90px" >
+				<button class="btn btn-light border" id='back' type="button" onclick="location.href='shopping_cart.php?id=<?php echo $restaurantID; ?>'" style="margin-top: -95px; width: 90px" >
 					<i class="fas fa-shopping-cart"></i>
 				</button>
 			</div>
@@ -55,7 +74,7 @@
 						 		<div class="col border border-bottom-0 pb-1 pl-2 pt-1 rounded-top text-left lead" style="font-size: 16px; background: #fd7e14; color: white;">Lokalizacja</div>
     							<div class="w-100"></div>
 						    	<div class="col p-0">
-						    		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9431.199034800073!2d20.4768723!3d53.775252!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x723fbb647fb17c03!2sCudne%20Manowce%20Restauracja!5e0!3m2!1spl!2spl!4v1642758316583!5m2!1spl!2spl" class="border" width="100%" height="350px" allowfullscreen="" loading="lazy"></iframe>
+						    		<?php echo $restaurant['location']; ?>
 						    	</div>
 						 	</div>
 						</div>
@@ -71,26 +90,27 @@
 						    	<div class="col p-0">
 						    		<div class="container">
 							    		<div class="row">
+											<?php $open_hours = json_decode($restaurant['open_hours'], true);?>
 											<div class="col text-left pl-4 lead" style="font-size: 16px;">Poniedziałek</div>
-										  	<div class="col text-right pr-4 lead" style="font-size: 16px;">11:00 - 22:30</div>
+										  	<div class="col text-right pr-4 lead" style="font-size: 16px;"><?php echo $open_hours["Monday"]["open"]." - ".$open_hours["Monday"]["close"]; ?></div>
 										  	<div class="w-100"></div>
 										  	<div class="col text-left pl-4 lead" style="font-size: 16px;">Wtorek</div>
-										  	<div class="col text-right pr-4 lead" style="font-size: 16px;">11:00 - 22:30</div>
+										  	<div class="col text-right pr-4 lead" style="font-size: 16px;"><?php echo $open_hours["Thuesday"]["open"]." - ".$open_hours["Thuesday"]["close"]; ?></div>
 										  	<div class="w-100"></div>
 										  	<div class="col text-left pl-4 lead" style="font-size: 16px;">Środa</div>
-										  	<div class="col text-right pr-4 lead" style="font-size: 16px;">11:00 - 22:30</div>
+										  	<div class="col text-right pr-4 lead" style="font-size: 16px;"><?php echo $open_hours["Wednesday"]["open"]." - ".$open_hours["Wednesday"]["close"]; ?></div>
 										  	<div class="w-100"></div>
 										  	<div class="col text-left pl-4 lead" style="font-size: 16px;">Czwartek</div>
-										  	<div class="col text-right pr-4 lead" style="font-size: 16px;">11:00 - 22:30</div>
+										  	<div class="col text-right pr-4 lead" style="font-size: 16px;"><?php echo $open_hours["Thursday"]["open"]." - ".$open_hours["Thursday"]["close"]; ?></div>
 										  	<div class="w-100"></div>
 										  	<div class="col text-left pl-4 lead" style="font-size: 16px;">Piątek</div>
-										  	<div class="col text-right pr-4 lead" style="font-size: 16px;">11:00 - 22:30</div>
+										  	<div class="col text-right pr-4 lead" style="font-size: 16px;"><?php echo $open_hours["Friday"]["open"]." - ".$open_hours["Friday"]["close"]; ?></div>
 										  	<div class="w-100"></div>
 										  	<div class="col text-left pl-4 lead" style="font-size: 16px;">Sobota</div>
-										  	<div class="col text-right pr-4 lead" style="font-size: 16px;">11:00 - 22:30</div>
+										  	<div class="col text-right pr-4 lead" style="font-size: 16px;"><?php echo $open_hours["Saturday"]["open"]." - ".$open_hours["Saturday"]["close"]; ?></div>
 										  	<div class="w-100"></div>
 										  	<div class="col text-left pl-4 lead" style="font-size: 16px;">Niedziela</div>
-										  	<div class="col text-right pr-4 lead" style="font-size: 16px;">11:00 - 22:30</div>
+										  	<div class="col text-right pr-4 lead" style="font-size: 16px;"><?php echo $open_hours["Sunday"]["open"]." - ".$open_hours["Sunday"]["close"]; ?></div>
 										</div>
 									</div>
 						    	</div>
@@ -109,10 +129,10 @@
 						    		<div class="container">
 							    		<div class="row">
 							    			<div class="col text-left pl-4 lead text-nowrap" style="font-size: 16px;">Minimalna kwota zamówienia</div>
-										  	<div class="col text-right pr-4 lead" style="font-size: 16px;">Brak</div>
+										  	<div class="col text-right pr-4 lead" style="font-size: 16px;"><?php echo number_format($restaurant['min_delivery_value'], 2)." zł"; ?></div>
 										  	<div class="w-100"></div>
 											<div class="col text-left pl-4 lead" style="font-size: 16px;">Koszty dostawy</div>
-										  	<div class="col text-right pr-4 lead" style="font-size: 16px;">10 zł</div>
+										  	<div class="col text-right pr-4 lead" style="font-size: 16px;"><?php echo number_format($restaurant['delivery_cost'], 2)." zł"; ?></div>
 										</div>
 									</div>
 						    	</div>
@@ -130,11 +150,11 @@
 						    	<div class="col p-0">
 						    		<div class="container">
 							    		<div class="row">
-							    			<div class="col text-left pl-4 lead text-nowrap" style="font-size: 16px;">Cudowne Manowce Restaurant</div>
+							    			<div class="col text-left pl-4 lead text-nowrap" style="font-size: 16px;"><?php echo $restaurant['name']; ?></div>
 										  	<div class="w-100"></div>
-											<div class="col text-left pl-4 lead" style="font-size: 16px;">Bolesława Chrobrego 4A</div>
+											<div class="col text-left pl-4 lead" style="font-size: 16px;"><?php echo $restaurant['adress']; ?></div>
 										  	<div class="w-100"></div>
-											<div class="col text-left pl-4 lead" style="font-size: 16px;">10-033 Olsztyn</div>
+											<div class="col text-left pl-4 lead" style="font-size: 16px;"><?php echo $restaurant['postcode']." ".$restaurant['city']; ?></div>
 										</div>
 									</div>
 						    	</div>
@@ -158,10 +178,10 @@
       					<div class="container">
 							<div class="row">
 							    <div class="col text-left pl-4 lead text-nowrap" style="font-size: 16px;">Adres email</div>
-							    <a class="col text-right pr-4 lead" style="font-size: 16px; color: #212529;" href="mailto:sample@mail.com">sample@mail.com</a>
+							    <a class="col text-right pr-4 lead" style="font-size: 16px; color: #212529;" href="mailto:<?php echo $restaurant['email']; ?>"><?php echo $restaurant['email']; ?></a>
 								<div class="w-100"></div>
 								<div class="col text-left pl-4 lead" style="font-size: 16px;">Numer telefonu</div>
-								<a class="col text-right pr-4 lead" style="font-size: 16px; color: #212529;" href="tel:+48123456789">+123456789</a>
+								<a class="col text-right pr-4 lead" style="font-size: 16px; color: #212529;" href="tel:<?php echo $restaurant['phone']; ?>"><?php echo $restaurant['phone']; ?></a>
 							</div>
 						</div>
       				</div>
@@ -221,21 +241,32 @@
 
 <div class="container-fluid bg-light">
 	<div class="row" style="width: 85%; margin-left: auto; margin-right: auto;">
+	<?php
+
+		$rows = $connect->query("SELECT * FROM products WHERE ID_restaurant = '$restaurantID'");
+		$num_rows = $rows->num_rows;
+		for($i = 0; $i < $num_rows; $i++){
+			$product = $rows->fetch_assoc();
+			$img = $product['photo'];
+			$name = $product['name'];
+			$desc = $product['description'];
+			$price = number_format($product['price'], 2);
+echo<<<EOT
   		<div class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
   			<a href="index.php" style="color: black; text-decoration: none;">
 				<div class="row">
 					<div class="col-2 p-0 border bordercolor">
-						<img src="wall.JPEG" class="img-fluid" alt="Responsive image">
+						<img src="{$img}" class="img-fluid" alt="Responsive image">
 					</div>
 					<div class="col-10">
 						<div class="row" style="min-height: 100%;">
-		  					<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Kubełek 30 Hot Wings</div>
+		  					<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">{$name}</div>
 		  					<div class="w-100"></div>
-		  					<div class="col h-50 lead" style="padding-left: 10%; font-size: 16px;">30 Hot Wings (pikantne skrzydełka), 2x frytki 40g</div>
+		  					<div class="col h-50 lead" style="padding-left: 10%; font-size: 16px;">{$desc}</div>
 		  					<div class="w-100"></div>
 		  					<div class="col text-right lead" style="padding-bottom: 15px; padding-right: 10%; font-size: 22px;">
 		 						<i class="fas fa-money-bill-wave-alt" style="color: #fd7e14"></i>
-		 							39,00 zł
+		 							{$price} zł
 		 					</div>
 						</div>
 					</div>
@@ -261,125 +292,9 @@
 			</button>
   		</div>
   		<div class="w-100" style="padding-top: 30px"></div>
-  		<div class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
-  			<a href="index.php" style="color: black; text-decoration: none;">
-				<div class="row">
-					<div class="col-2 p-0 border bordercolor">
-						<img src="wall.JPEG" class="img-fluid" alt="Responsive image">
-					</div>
-					<div class="col-10">
-						<div class="row" style="min-height: 100%;">
-		  					<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Kubełek 30 Hot Wings</div>
-		  					<div class="w-100"></div>
-		  					<div class="col h-50 lead" style="padding-left: 10%; font-size: 16px;">30 Hot Wings (pikantne skrzydełka), 2x frytki 40g</div>
-		  					<div class="w-100"></div>
-		  					<div class="col text-right lead" style="padding-bottom: 15px; padding-right: 10%; font-size: 22px;">
-		 						<i class="fas fa-money-bill-wave-alt" style="color: #fd7e14"></i>
-		 							39,00 zł
-		 					</div>
-						</div>
-					</div>
-				</div>
-			</a>
-  		</div>
-  		<div class="col-1" style="display: flex; justify-content: center; align-items: center;">
-  			<div class="input-group-vertical p-auto ml-3">
-				<span class="input-group-btn bg-light">
-			    	<button class="btn btn-pluss border bordercolor rounded-0 border-bottom-0 p-2" type="button" style="width: 35px; display: flex justify-content: center; align-items: center; color: #fd7e14">
-			    		<i class="fas fa-plus" style="width: 17px; height: 17px;"></i>
-			    	</button>
-			  	</span>
-			  	<input type="text" class="form-control no-padding add-color text-center height-25 border bordercolor rounded-0" maxlength="2" value="0" style="width: 35px; color: black;"disabled>
-			  	<span class="input-group-btn">
-			    	<button class="btn btn-minuse border bordercolor rounded-0 border-top-0 p-2" type="button" style="width: 35px; display: flex justify-content: center; align-items: center; color: #fd7e14">
-			    		<i class="fas fa-minus" style="width: 17px; height: 17px;"></i>
-			    	</button>
-			  	</span>
-			</div>
-			<button id="btn_plus" class="btn ml-2">
-				<i class="fas fa-plus"></i>
-			</button>
-  		</div>
-  		<div class="w-100" style="padding-top: 30px"></div>
-  		<div class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
-  			<a href="index.php" style="color: black; text-decoration: none;">
-				<div class="row">
-					<div class="col-2 p-0 border bordercolor">
-						<img src="wall.JPEG" class="img-fluid" alt="Responsive image">
-					</div>
-					<div class="col-10">
-						<div class="row" style="min-height: 100%;">
-		  					<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Kubełek 30 Hot Wings</div>
-		  					<div class="w-100"></div>
-		  					<div class="col h-50 lead" style="padding-left: 10%; font-size: 16px;">30 Hot Wings (pikantne skrzydełka), 2x frytki 40g</div>
-		  					<div class="w-100"></div>
-		  					<div class="col text-right lead" style="padding-bottom: 15px; padding-right: 10%; font-size: 22px;">
-		 						<i class="fas fa-money-bill-wave-alt" style="color: #fd7e14"></i>
-		 							39,00 zł
-		 					</div>
-						</div>
-					</div>
-				</div>
-			</a>
-  		</div>
-  		<div class="col-1" style="display: flex; justify-content: center; align-items: center;">
-  			<div class="input-group-vertical p-auto ml-3">
-				<span class="input-group-btn bg-light">
-			    	<button class="btn btn-pluss border bordercolor rounded-0 border-bottom-0 p-2" type="button" style="width: 35px; display: flex justify-content: center; align-items: center; color: #fd7e14">
-			    		<i class="fas fa-plus" style="width: 17px; height: 17px;"></i>
-			    	</button>
-			  	</span>
-			  	<input type="text" class="form-control no-padding add-color text-center height-25 border bordercolor rounded-0" maxlength="2" value="0" style="width: 35px; color: black;"disabled>
-			  	<span class="input-group-btn">
-			    	<button class="btn btn-minuse border bordercolor rounded-0 border-top-0 p-2" type="button" style="width: 35px; display: flex justify-content: center; align-items: center; color: #fd7e14">
-			    		<i class="fas fa-minus" style="width: 17px; height: 17px;"></i>
-			    	</button>
-			  	</span>
-			</div>
-			<button id="btn_plus" class="btn ml-2">
-				<i class="fas fa-plus"></i>
-			</button>
-  		</div>
-  		<div class="w-100" style="padding-top: 30px"></div>
-  		<div class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
-  			<a href="index.php" style="color: black; text-decoration: none;">
-				<div class="row">
-					<div class="col-2 p-0 border bordercolor">
-						<img src="wall.JPEG" class="img-fluid" alt="Responsive image">
-					</div>
-					<div class="col-10">
-						<div class="row" style="min-height: 100%;">
-		  					<div class="col h-50" style="padding-top: 15px; padding-left: 7%; font-size: 22px;">Kubełek 30 Hot Wings</div>
-		  					<div class="w-100"></div>
-		  					<div class="col h-50 lead" style="padding-left: 10%; font-size: 16px;">30 Hot Wings (pikantne skrzydełka), 2x frytki 40g</div>
-		  					<div class="w-100"></div>
-		  					<div class="col text-right lead" style="padding-bottom: 15px; padding-right: 10%; font-size: 22px;">
-		 						<i class="fas fa-money-bill-wave-alt" style="color: #fd7e14"></i>
-		 							39,00 zł
-		 					</div>
-						</div>
-					</div>
-				</div>
-			</a>
-  		</div>
-  		<div class="col-1" style="display: flex; justify-content: center; align-items: center;">
-  			<div class="input-group-vertical p-auto ml-3">
-				<span class="input-group-btn bg-light">
-			    	<button class="btn btn-pluss border bordercolor rounded-0 border-bottom-0 p-2" type="button" style="width: 35px; display: flex justify-content: center; align-items: center; color: #fd7e14">
-			    		<i class="fas fa-plus" style="width: 17px; height: 17px;"></i>
-			    	</button>
-			  	</span>
-			  	<input type="text" class="form-control no-padding add-color text-center height-25 border bordercolor rounded-0" maxlength="2" value="0" style="width: 35px; color: black;"disabled>
-			  	<span class="input-group-btn">
-			    	<button class="btn btn-minuse border bordercolor rounded-0 border-top-0 p-2" type="button" style="width: 35px; display: flex justify-content: center; align-items: center; color: #fd7e14">
-			    		<i class="fas fa-minus" style="width: 17px; height: 17px;"></i>
-			    	</button>
-			  	</span>
-			</div>
-			<button id="btn_plus" class="btn ml-2">
-				<i class="fas fa-plus"></i>
-			</button>
-  		</div>
+EOT;
+		}
+	?>
 	</div>
 </div>
 
@@ -391,17 +306,16 @@
 
 <script>
 	$("header").load("navbar.php");
+
+	$('.btn-minuse').on('click', function(){        
+		$(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) - 1)
+	})
+
+	$('.btn-pluss').on('click', function(){         
+		$(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) + 1)
+	})
 </script>
 
 </body>
 </html>
-
-<script type="text/javascript">
-	$('.btn-minuse').on('click', function(){        
-		$(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) - 1)
-})
-
-	$('.btn-pluss').on('click', function(){         
-		$(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) + 1)
-})
-</script>
+<?php } ?>
