@@ -89,7 +89,7 @@ echo<<<EOT
 		  					<div class="w-100"></div>
 		  					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
 		  						<i class="fas fa-star" style="color: #fd7e14"></i> 
-								  	$opinions_avg ($opinions_count)
+								  	{$opinions_avg} ({$opinions_count})
 		  					</div>
 		 					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
 		 						<i class="fas fa-clock" style="color: #fd7e14"></i>
