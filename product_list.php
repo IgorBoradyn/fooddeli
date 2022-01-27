@@ -273,24 +273,6 @@ echo<<<EOT
 				</div>
 			</a>
   		</div>
-  		<div class="col-1" style="display: flex; justify-content: center; align-items: center;">
-  			<div class="input-group-vertical p-auto ml-3">
-				<span class="input-group-btn bg-light">
-			    	<button class="btn btn-pluss border bordercolor rounded-0 border-bottom-0 p-2" type="button" style="width: 35px; display: flex justify-content: center; align-items: center; color: #fd7e14">
-			    		<i class="fas fa-plus" style="width: 17px; height: 17px;"></i>
-			    	</button>
-			  	</span>
-			  	<input type="text" class="form-control no-padding add-color text-center height-25 border bordercolor rounded-0" maxlength="2" value="0" style="width: 35px; color: black;"disabled>
-			  	<span class="input-group-btn">
-			    	<button class="btn btn-minuse border bordercolor rounded-0 border-top-0 p-2" type="button" style="width: 35px; display: flex justify-content: center; align-items: center; color: #fd7e14">
-			    		<i class="fas fa-minus" style="width: 17px; height: 17px;"></i>
-			    	</button>
-			  	</span>
-			</div>
-			<button id="btn_plus" class="btn ml-2">
-				<i class="fas fa-plus"></i>
-			</button>
-  		</div>
   		<div class="w-100" style="padding-top: 30px"></div>
 EOT;
 		}
@@ -303,20 +285,6 @@ EOT;
     	<a href="https://moodle.uwm.edu.pl/enrol/index.php?id=5426/" style="color:black"> FoodDeli.pl</a>
   	</div>
 </footer>
-
-<script>
-	$("header").load("navbar.php");
-
-	$('.btn-minuse').on('click', function(){   
-		if ($(this).parent().siblings('input').val() >0)     
-			$(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) - 1)
-	})
-
-	$('.btn-pluss').on('click', function(){ 
-		if ($(this).parent().siblings('input').val() < 9)             
-			$(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) + 1)
-	})
-</script>
 
 </body>
 </html>

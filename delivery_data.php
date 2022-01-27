@@ -125,6 +125,17 @@
 					</div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col">
+					<h3 class='fluid bg-light text-center mb-0 pt-3 pb-4 lead'>Do zapłaty</h3>
+				</div>
+				<div class="w-100"></div>
+				<div class="col pl-5">
+					<div>Produkty: 156zł</div>
+					<div>Koszt dostawy: 10zł</div>
+					<div>Do zapłaty: 166zł</div>
+				</div>
+			</div>
 		</div>
 		<div class="col-1"></div>
 	</div>
