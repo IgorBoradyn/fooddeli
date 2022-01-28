@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if($_SESSION['isCourier']){
+	if(isset($_SESSION['isCourier']) && $_SESSION['isCourier']){
 		require_once "connect.php";
 
 		$connect = @new mysqli($host, $db_user, $db_password, $db_name);
