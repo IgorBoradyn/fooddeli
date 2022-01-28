@@ -292,7 +292,7 @@ EOT;
 <script>
 	$("header").load("navbar.php");
 	
-	<?php if(!(isset($_SESSION['isCourier']) && $_SESSION['isCourier'])){ ?>
+	<?php if(!(isset($_SESSION['isCourier']) && $_SESSION['isCourier']) AND !(!(isset($_SESSION['logged']) && $_SESSION['logged']))){ ?>
 	$(".product-add").click(function(event){
 		event.preventDefault();
 
