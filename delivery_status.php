@@ -1,3 +1,18 @@
+<?php
+	session_start();
+	if(!(isset($_SESSION['logged']) && $_SESSION['logged']))
+		header("Location: index.php");
+	require_once "connect.php";
+
+	$connect = @new mysqli($host, $db_user, $db_password, $db_name);
+
+	$connect->set_charset('utf8');
+
+	if($connect->connect_errno!=0){
+		echo "Error: ".$connect->connect_errno;
+	}
+	else{
+?>
 <!DOCTYPE html>
 <html lang='pl'>
 <head>
@@ -40,37 +55,37 @@
   						<div class="form-row">
   							<div class="col-10 pb-1">
       							<label for="validationCustom07">Imię i nazwisko</label>
-      							<input type="text" class="form-control" id="validationCustom07" placeholder="Z bazy danych" disabled>
+      							<input type="text" class="form-control" id="validationCustom07" placeholder="<?php echo $_SESSION['firstName']." ".$_SESSION['lastName'] ?>" disabled>
     						</div>
     						<div class="w-100"></div>
     						<div class="col-10 pb-1 pt-1">
       							<label for="validationCustom01">Ulica</label>
-      							<input type="text" class="form-control" id="validationCustom01" placeholder="Z bazy danych" disabled>
+      							<input type="text" class="form-control" id="validationCustom01" placeholder="<?php echo $_SESSION['street'] ?>" disabled>
     						</div>
     						<div class="w-100"></div>
 						    <div class="col-10 pb-1 pt-1">
 							    <label for="validationCustom02">Numer budynku</label>
-							    <input type="text" class="form-control" id="validationCustom02" placeholder="Z bazy danych" disabled>
+							    <input type="text" class="form-control" id="validationCustom02" placeholder="<?php echo $_SESSION['streetNumber'] ?>" disabled>
 							    <div class="valid-feedback">Looks good!</div>
 						    </div>
    							<div class="w-100"></div>
 						    <div class="col-10 pb-1 pt-1">
 							    <label for="validationCustom03">Numer mieszkania</label>
-							    <input type="text" class="form-control" id="validationCustom03" placeholder="Z bazy danych" disabled>
+							    <input type="text" class="form-control" id="validationCustom03" placeholder="<?php echo $_SESSION['flatNumber'] ?>" disabled>
 						    </div>
 							<div class="w-100"></div>
 						    <div class="col-10 pb-1 pt-1">
 						      	<label for="validationCustom04">Numer telefonu</label>
-						      	<input type="tel" class="form-control" id="validationCustom04" placeholder="Z bazy danych" disabled>
+						      	<input type="tel" class="form-control" id="validationCustom04" placeholder="<?php echo $_SESSION['phone'] ?>" disabled>
 						    </div>							
 						    <div class="w-100"></div>
 						    <div class="col-3 pb-1 pt-1">
       							<label for="validationCustom05">Kod pocztowy</label>
-								<input type="text" class="form-control" id="validationCustom05" placeholder="Z bazy danych" disabled>
+								<input type="text" class="form-control" id="validationCustom05" placeholder="<?php echo $_SESSION['postcode'] ?>" disabled>
     						</div>
 						    <div class="col-7 pb-1 pt-1">
 						      	<label for="validationCustom06">Miasto</label>
-						      	<input type="text" class="form-control" id="validationCustom06" placeholder="Z bazy danych" disabled>
+						      	<input type="text" class="form-control" id="validationCustom06" placeholder="<?php echo $_SESSION['city'] ?>" disabled>
 						    </div>
   						</div>
 					</form>
@@ -114,3 +129,4 @@
 
 </body>
 </html>
+<?php } ?>

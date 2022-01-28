@@ -49,6 +49,7 @@
 </div>
 
 <div class="containe bg-light">
+<form method="post" action="create_order.php" class="needs-validation">
 	<div class="row">
 		<div class="col-1"></div>
 		<div class="col-5" style="border-right: 1px solid #dee2e6;">
@@ -58,47 +59,46 @@
 				</div>
 				<div class="w-100"></div>
 				<div class="col pl-5">
-					<form class="needs-validation" novalidate>
   						<div class="form-row">
   							<div class="col-10 pb-1">
       							<label for="validationCustom07">Imię i nazwisko</label>
-      							<input type="text" class="form-control" id="validationCustom07" placeholder="Wpisz swoje imię i nazwisko" value="<?php echo $_SESSION['firstName']." ".$_SESSION['lastName'] ?>" required>
+      							<input type="text" class="form-control" id="validationCustom07" name="first_last_name" placeholder="Wpisz swoje imię i nazwisko" value="<?php echo $_SESSION['firstName']." ".$_SESSION['lastName'] ?>" required>
       							<div class="invalid-feedback">Należy podać imię i nazwisko</div>
     						</div>
     						<div class="w-100"></div>
     						<div class="col-10 pb-1 pt-1">
       							<label for="validationCustom01">Ulica</label>
-      							<input type="text" class="form-control" id="validationCustom01" placeholder="Wpisz nazwę ulicy" value="<?php echo $_SESSION['street'] ?>" required>
+      							<input type="text" class="form-control" id="validationCustom01" name="street" placeholder="Wpisz nazwę ulicy" value="<?php echo $_SESSION['street'] ?>" required>
       							<div class="invalid-feedback">Nazwa ulicy jest wymagana</div>
     						</div>
     						<div class="w-100"></div>
 						    <div class="col-10 pb-1 pt-1">
 							    <label for="validationCustom02">Numer budynku</label>
-							    <input type="text" class="form-control" id="validationCustom02" placeholder="Wpisz numer budynku" value="<?php echo $_SESSION['streetNumber'] ?>" required>
+							    <input type="text" class="form-control" id="validationCustom02" name="street_number" placeholder="Wpisz numer budynku" value="<?php echo $_SESSION['streetNumber'] ?>" required>
 							    <div class="valid-feedback">Looks good!</div>
 								<div class="invalid-feedback">Numer domu jest wymagany</div>
 						    </div>
    							<div class="w-100"></div>
 						    <div class="col-10 pb-1 pt-1">
 							    <label for="validationCustom03">Numer mieszkania</label>
-							    <input type="text" class="form-control" id="validationCustom03" placeholder="Wpisz numer mieszkania" value="<?php echo $_SESSION['flatNumber'] ?>" required>
+							    <input type="text" class="form-control" id="validationCustom03" name="flat_number" placeholder="Wpisz numer mieszkania" value="<?php echo $_SESSION['flatNumber'] ?>" required>
 								<div class="invalid-feedback">Numer mieszkania jest wymagany</div>
 						    </div>
 							<div class="w-100"></div>
 						    <div class="col-10 pb-1 pt-1">
 						      	<label for="validationCustom04">Numer telefonu</label>
-						      	<input type="tel" class="form-control" id="validationCustom04" placeholder="Wpisz swój numer telefonu" pattern="[0-9]{9}" value="<?php echo $_SESSION['phone'] ?>" required>
+						      	<input type="tel" class="form-control" id="validationCustom04" name="phone" placeholder="Wpisz swój numer telefonu" pattern="[0-9]{9}" value="<?php echo $_SESSION['phone'] ?>" required>
 						      	<div class="invalid-feedback">Należy podać numer telefonu</div>
 						    </div>							
 						    <div class="w-100"></div>
 						    <div class="col-3 pb-1 pt-1">
       							<label for="validationCustom05">Kod pocztowy</label>
-								<input type="text" class="form-control" id="validationCustom05" placeholder="Wpisz swój kod pocztowy" pattern="[0-9]{2}[-][0-9]{3}" value="<?php echo $_SESSION['postcode'] ?>" required>
+								<input type="text" class="form-control" id="validationCustom05" name="postcode" placeholder="Wpisz swój kod pocztowy" pattern="[0-9]{2}[-][0-9]{3}" value="<?php echo $_SESSION['postcode'] ?>" required>
       							<div class="invalid-feedback">Należy podać kod pocztowy</div>
     						</div>
 						    <div class="col-7 pb-1 pt-1">
 						      	<label for="validationCustom06">Miasto</label>
-						      	<input type="text" class="form-control" id="validationCustom06" placeholder="Wpisz swoje miasto" value="<?php echo $_SESSION['city'] ?>" required>
+						      	<input type="text" class="form-control" id="validationCustom06" name="city" placeholder="Wpisz swoje miasto" value="<?php echo $_SESSION['city'] ?>" required>
 						      	<div class="invalid-feedback">Należy podać miasto</div>
 						    </div>
   						</div>
@@ -109,11 +109,12 @@
       							<div class="invalid-feedback">Należy zaakceptować regulamin</div>
     						</div>
   						</div>
+						<input type="text" name="restID" value="<?php echo $restaurantID ?>" style="visibility: hidden;">
   						<div class="container">
   							<div class="row">
     							<div class="col text-center pt-4 pb-4">
       								<div class="bg-light text-center" style="height: 0px;">
-										<button class="btn border bordercolor resto shadow-none btn-lg" id='back' type="submit" onclick="location.href='delivery_status.php'" style="background: rgb(234, 236, 239);">Zamawiam i płacę</button>
+										<button class="btn border bordercolor resto shadow-none btn-lg" id='back' type="submit" style="background: rgb(234, 236, 239);">Zamawiam i płacę</button>
 									</div>
     							</div>
   							</div>
@@ -130,19 +131,19 @@
 				<div class="w-100"></div>
 				<div class="col pl-5">
 					<div class="custom-control custom-radio pb-1">
-						<input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
+						<input type="radio" id="customRadio1" name="payment_type" class="custom-control-input" value="PayU" checked>
 					  	<label class="custom-control-label" for="customRadio1">PayU</label>
 					</div>
 					<div class="custom-control custom-radio pb-1">
-					  	<input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+					  	<input type="radio" id="customRadio2" name="payment_type" class="custom-control-input" value="Gotówka">
 					  	<label class="custom-control-label" for="customRadio2">Gotówka</label>
 					</div>
 					<div class="custom-control custom-radio pb-1">
-						<input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+						<input type="radio" id="customRadio3" name="payment_type" class="custom-control-input" value="Karta kredytowa">
 					  	<label class="custom-control-label" for="customRadio3">Karta kredytowa</label>
 					</div>
 					<div class="custom-control custom-radio pb-1">
-					  	<input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+					  	<input type="radio" id="customRadio4" name="payment_type" class="custom-control-input" value="PayPal">
 					  	<label class="custom-control-label" for="customRadio4">PayPal</label>
 					</div>
 				</div>
@@ -175,7 +176,7 @@
 		<div class="col-1"></div>
 	</div>
 </div>
-
+<form method="post" action="create_order.php" class="needs-validation">
 </div>
 
 <footer class="page-footer font-small bg-light"><div class="row" style="width: 85%; margin-left: auto; margin-right: auto;">
