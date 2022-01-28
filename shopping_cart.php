@@ -212,6 +212,7 @@
 
 		$rows = $connect->query("SELECT * FROM products_list INNER JOIN shopping_cart ON shopping_cart.ID_products_list = products_list.ID WHERE ID_client = '$userID' AND shopping_cart.ID_restaurant = '$restaurantID';");
 		$num_rows = $rows->num_rows;
+		$sum = 0;
 		for($i = 0; $i < $num_rows; $i++){
 			$position = $rows->fetch_assoc();
 			$productID = $position['ID_product'];
@@ -225,6 +226,7 @@
 			$desc = $product['description'];
 			$img = $product['photo'];
 			$price = number_format($product['price'], 2);
+			$sum += $product['price']*$amount;
 echo<<<EOT
 		<div class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
 			<a href="shopping_cart.php?id={$restaurantID}#{$productID}" class="product-remove" style="color: black; text-decoration: none;">
@@ -258,6 +260,16 @@ echo<<<EOT
 EOT;
 		}
 	?>
+	</div>
+	<h2 class='fluid bg-light text-right mb-0 pt-4 pb-1' style="margin-right: 10%">Do zapłaty: <?php echo number_format($sum, 2); ?>zł</h2>
+	<div class="container">
+  		<div class="row">
+    		<div class="col text-center pt-2 pb-4">
+      			<div class="bg-light text-center" style="height: 0px;">
+					<button class="btn border bordercolor resto shadow-none btn-lg" id='back' type="button" onclick="location.href='delivery_data.php?id=<?php echo $restaurantID; ?>'" style="background: rgb(234, 236, 239);">Zamów</button>
+				</div>
+    		</div>
+  		</div>
 	</div>
 </div>
 
