@@ -216,11 +216,7 @@
 		for($i = 0; $i < $num_rows; $i++){
 			$position = $rows->fetch_assoc();
 			$productID = $position['ID_product'];
-
-//################## Tą zmienną trzeba dodać do znacznika, kótry będzie pokazywał ilość produktów ####################################
 			$amount = $position['amount'];
-//####################################################################################################################################
-
 			$product = $connect->query("SELECT * FROM products WHERE ID = '$productID'")->fetch_assoc();
 			$name = $product['name'];
 			$desc = $product['description'];
@@ -252,6 +248,7 @@ echo<<<EOT
 		<div class="col-1" style="display: flex; justify-content: center; align-items: center;">
 			<a href="shopping_cart.php?id={$restaurantID}#{$productID}" class="product-add">
 				<button id="btn_plus" class="btn ml-2">
+				    <input type="numer" class="ml-4" style="width: 50px; color: black;" placeholder="{$amount}" disabled>
 					<i class="fas fa-plus"></i>
 				</button>
 			</a>
