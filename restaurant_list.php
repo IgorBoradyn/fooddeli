@@ -73,8 +73,13 @@
 			$opinions_avg = $connect->query("SELECT AVG(rating) AS avg FROM opinions WHERE restaurant_ID = '$ID'")->fetch_assoc();
 			$opinions_avg = $opinions_avg['avg'];
 
-			$delivery_time = "dostawy wstrzymane";
+			//$delivery_time = "dostawy wstrzymane";
 			$delivery_cost = number_format($restaurant['delivery_cost'], 2);
+			
+			$open_hours = json_decode($restaurant['open_hours'], true);
+			$day = date('l');
+
+			$hours = $open_hours[$day]['open']." - ".$open_hours[$day]['close'];
 
 echo<<<EOT
   		<div class="resto col border bordercolor" style="background: rgb(234, 236, 239);">
@@ -93,7 +98,7 @@ echo<<<EOT
 		  					</div>
 		 					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
 		 						<i class="fas fa-clock" style="color: #fd7e14"></i>
-		 							{$delivery_time}
+		 							{$hours}
 		 					</div>
 		  					<div class="col text-center" style="padding-bottom: 15px; font-size: 22px;">
 		  						<i class="fas fa-bicycle" style="color: #fd7e14"></i>
