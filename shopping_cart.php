@@ -248,9 +248,11 @@ echo<<<EOT
 			</a>
 		</div>
 		<div class="col-1" style="display: flex; justify-content: center; align-items: center;">
-			<button id="btn_plus" class="btn ml-2">
-				<i class="fas fa-plus"></i>
-			</button>
+			<a href="shopping_cart.php?id={$restaurantID}#{$productID}" class="product-add">
+				<button id="btn_plus" class="btn ml-2">
+					<i class="fas fa-plus"></i>
+				</button>
+			</a>
 		</div>
 		<div class="w-100" style="padding-top: 30px"></div>
 EOT;
@@ -275,6 +277,22 @@ EOT;
 		var productID = href.split('#').pop();
 
 		$.post('remove_product_from_cart.php',{
+			restID: <?php echo $restaurantID ?>,
+			productID: productID
+		}, function(){
+			window.location = href;
+			location.reload();
+		});
+
+	});
+
+	$(".product-add").click(function(event){
+		event.preventDefault();
+
+		var href = this.href;
+		var productID = href.split('#').pop();
+
+		$.post('add_product_to_cart.php',{
 			restID: <?php echo $restaurantID ?>,
 			productID: productID
 		}, function(){
