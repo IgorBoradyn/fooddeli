@@ -33,8 +33,9 @@
       					<label for="validationCustom07">E-mail</label>
       					<input type="text" class="form-control" id="validationCustom01" placeholder="<?php echo $_SESSION['email']; ?>" disabled>
       					<label for="validationCustom07">Imię i nazwisko</label>
-      					<input type="text" class="form-control" id="validationCustom02" placeholder="<?php echo $_SESSION['firstName']." ".$_SESSION['lastName']; ?>" disabled>
-      					<label for="validationCustom07">Ulica</label>
+						<input type="text" class="form-control" id="validationCustom02" placeholder="<?php echo $_SESSION['firstName']." ".$_SESSION['lastName']; ?>" disabled>
+      				<?php if(!(isset($_SESSION['isCourier']) && $_SESSION['isCourier'])){ ?>
+						<label for="validationCustom07">Ulica</label>
       					<input type="text" class="form-control" id="validationCustom03" placeholder="<?php echo $_SESSION['street']; ?>" disabled>
       					<label for="validationCustom07">Numer budynku</label>
       					<input type="text" class="form-control" id="validationCustom04" placeholder="<?php echo $_SESSION['streetNumber']; ?>" disabled>
@@ -46,6 +47,7 @@
       					<input type="text" class="form-control" id="validationCustom07" placeholder="<?php echo $_SESSION['postcode']; ?>" disabled>
       					<label for="validationCustom07">Miasto</label>
       					<input type="text" class="form-control" id="validationCustom08" placeholder="<?php echo $_SESSION['city']; ?>" disabled>
+					<?php } ?>
     				</div>
     			</div>
 			</form>

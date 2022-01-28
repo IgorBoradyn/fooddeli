@@ -46,11 +46,13 @@
     	
     	</div>
     	<div class="col-2 text-center">
+		<?php if(!(isset($_SESSION['isCourier']) && $_SESSION['isCourier'])){ ?>
      		<div class="bg-light text-center" style="height: 0px;">
 				<button class="btn btn-light border" id='back' type="button" onclick="location.href='shopping_cart.php?id=<?php echo $restaurantID; ?>'" style="margin-top: -95px; width: 90px" >
 					<i class="fas fa-shopping-cart"></i>
 				</button>
 			</div>
+		<?php } ?>
     	</div>
   	</div>
 </div>
@@ -290,6 +292,7 @@ EOT;
 <script>
 	$("header").load("navbar.php");
 	
+	<?php if(!(isset($_SESSION['isCourier']) && $_SESSION['isCourier'])){ ?>
 	$(".product-add").click(function(event){
 		event.preventDefault();
 
@@ -305,6 +308,7 @@ EOT;
 		});
 
 	});
+	<?php } ?>
 </script>
 
 </body>
