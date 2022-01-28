@@ -301,6 +301,7 @@ EOT;
 			productID: productID
 		}, function(){
 			window.location = href;
+			location.reload();
 		});
 
 	});
